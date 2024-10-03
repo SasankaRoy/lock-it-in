@@ -1,0 +1,6 @@
+:root {
+  --primary: rgba(0, 45, 98, 1);
+  --secondary: rgba(135, 206, 235, 1);
+  --sub-text: rgba(32, 32, 32, 1);
+  --DS: 0px 0px 4px 2px rgba(0, 0, 0, 0.15);
+}
