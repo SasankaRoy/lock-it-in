@@ -6,6 +6,9 @@ const aboutSvgCircleDark = document.getElementById("aboutSvg__circleDark");
 const aboutSvgCircleLight = document.getElementById("aboutSvg__circleLight");
 const aboutSmallTag = document.getElementById("about__smallTag");
 
+
+console.log('test in line 10')
+
 gsap.registerPlugin(ScrollTrigger);
 const gsapTL = new gsap.timeline();
 
