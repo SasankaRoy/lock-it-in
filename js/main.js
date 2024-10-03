@@ -335,6 +335,118 @@ gsap.from(".testimonialSection__Subheading", {
   ease: "power1.out",
   delay: 0.1,
 });
+gsap.from(".contact__formWrapper", {
+  scrollTrigger: {
+    trigger: ".contact__formWrapper",
+    toggleActions: "restart none none none",
+    markers: false,
+  },
+  opacity: 0,
+  scale:.3,
+  duration: 0.8,
+  ease: "power1.out",
+  delay: 0.1,
+});
+gsap.from(".get-in-touch", {
+  scrollTrigger: {
+    trigger: ".get-in-touch",
+    toggleActions: "restart none none none",
+    markers: false,
+  },
+  opacity: 0,
+  x: "-30%",
+  duration: 0.8,
+  ease: "power1.out",
+  delay: 0.1,
+});
+gsap.from(".text-wrapper-38", {
+  scrollTrigger: {
+    trigger: ".text-wrapper-38",
+    toggleActions: "restart none none none",
+    markers: false,
+  },
+  opacity: 0,
+  x: "-30%",
+  duration: 0.8,
+  ease: "power1.out",
+  delay: 0.1,
+});
+gsap.from(".text-10", {
+  scrollTrigger: {
+    trigger: ".text-10",
+    toggleActions: "restart none none none",
+    markers: false,
+  },
+  opacity: 0,
+  x: "-30%",
+  duration: 0.8,
+  ease: "power1.out",
+  delay: 0.1,
+});
+
+
+
+gsap.from(".contact__phoneIcon", {
+  scrollTrigger: {
+    trigger: ".contact__phoneIcon",
+    toggleActions: "restart none none none",
+    markers: false,
+  },
+  opacity: 0,
+  scale:.3,
+  duration: 0.8,
+  ease: "power1.out",
+  delay: 0.1,
+});
+gsap.from(".contact__emailIcon", {
+  scrollTrigger: {
+    trigger: ".contact__emailIcon",
+    toggleActions: "restart none none none",
+    markers: false,
+  },
+  opacity: 0,
+  scale:.3,
+  duration: 0.8,
+  ease: "power1.out",
+  delay: 0.1,
+});
+gsap.from(".contact__locationIcon", {
+  scrollTrigger: {
+    trigger: ".contact__locationIcon",
+    toggleActions: "restart none none none",
+    markers: false,
+  },
+  opacity: 0,
+  scale:.3,
+  duration: 0.8,
+  ease: "power1.out",
+  delay: 0.1,
+});
+gsap.from(".text-wrapper-40", {
+  scrollTrigger: {
+    trigger: ".text-wrapper-40",
+    toggleActions: "restart none none none",
+    markers: false,
+  },
+  opacity: 0,
+  x:'50%',
+  duration: 0.8,
+  ease: "power1.out",
+  delay: 0.1,
+});
+gsap.from(".text-wrapper-41", {
+  scrollTrigger: {
+    trigger: ".text-wrapper-40",
+    toggleActions: "restart none none none",
+    markers: false,
+  },
+  opacity: 0,
+  x:'50%',
+  duration: 0.8,
+  ease: "power1.out",
+  delay: 0.1,
+});
+
 
 // const handleAnimate = () => {
 //   console.log("the time interval");

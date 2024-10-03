@@ -643,7 +643,8 @@
               </p>
               <div class="get-in-touch">GET IN TOUCH</div>
             </div>
-            <div class="tell-us-card">
+
+            <div class="tell-us-card contact__formWrapper">
               <div class="tell-us">TELL US</div>
               <div class="your-name">
                 <div class="text-wrapper-39">Your name</div>
@@ -656,21 +657,32 @@
               </div>
               <div class="submit"><div class="submit-2">SUBMIT</div></div>
             </div>
+
             <div class="frame-5">
               <div class="phone">
-                <img class="img-3" src="img/solar-phone-bold.svg" />
+                <img
+                  class="img-3 contact__phoneIcon"
+                  src="img/solar-phone-bold.svg"
+                />
                 <div class="text-wrapper-40">+1 232-382-1193</div>
               </div>
               <div class="email">
-                <img class="img-3" src="img/ic-round-email.svg" />
-                <input
+                <img
+                  class="img-3 contact__emailIcon"
+                  src="img/ic-round-email.svg"
+                />
+                <!-- <input
                   class="example-gmail-com"
                   placeholder="example@gmail.com"
                   type="email"
-                />
+                /> -->
+                <div class="text-wrapper-41">example@gmail.com</div>
               </div>
               <div class="location">
-                <img class="img-3" src="img/typcn-location.svg" />
+                <img
+                  class="img-3 contact__locationIcon"
+                  src="img/typcn-location.svg"
+                />
                 <div class="text-wrapper-41">New york</div>
               </div>
             </div>
@@ -782,6 +794,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./js/main.js" />
+
     <script>
       const NavbarWrapper = document.getElementById("navBar__mainWrapper");
       const heroSectionWraper = document.getElementById(
@@ -798,8 +811,6 @@
         "aboutSvg__circleLight"
       );
       const aboutSmallTag = document.getElementById("about__smallTag");
-
-      console.log("test in line 802");
 
       gsap.registerPlugin(ScrollTrigger);
       const gsapTL = new gsap.timeline();
@@ -1123,6 +1134,115 @@
         },
         opacity: 0,
         x: "-30%",
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+
+      gsap.from(".contact__formWrapper", {
+        scrollTrigger: {
+          trigger: ".contact__formWrapper",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        scale: 0.3,
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+      gsap.from(".get-in-touch", {
+        scrollTrigger: {
+          trigger: ".get-in-touch",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        x: "-30%",
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+      gsap.from(".text-wrapper-38", {
+        scrollTrigger: {
+          trigger: ".text-wrapper-38",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        x: "-30%",
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+      gsap.from(".text-10", {
+        scrollTrigger: {
+          trigger: ".text-10",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        x: "-30%",
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+      gsap.from(".contact__phoneIcon", {
+        scrollTrigger: {
+          trigger: ".contact__phoneIcon",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        scale: 0.3,
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+      gsap.from(".contact__emailIcon", {
+        scrollTrigger: {
+          trigger: ".contact__emailIcon",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        scale: 0.3,
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+      gsap.from(".contact__locationIcon", {
+        scrollTrigger: {
+          trigger: ".contact__locationIcon",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        scale: 0.3,
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+      gsap.from(".text-wrapper-40", {
+        scrollTrigger: {
+          trigger: ".text-wrapper-40",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        x: "50%",
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+      gsap.from(".text-wrapper-41", {
+        scrollTrigger: {
+          trigger: ".text-wrapper-40",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        x: "50%",
         duration: 0.8,
         ease: "power1.out",
         delay: 0.1,
