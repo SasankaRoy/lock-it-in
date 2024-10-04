@@ -1,0 +1,114 @@
+/*=========== TABLE OF CONTENTS ===========
+1. Text CSS
+2. Heading CSS
+3. Container CSS
+==========================================*/
+
+/*-------------------------------------
+  1. Text CSS
+--------------------------------------*/
+.ui.text.size-textxs {
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  @media only screen and (max-width: 1440px) {
+    font-size: 17px;
+  }
+}
+
+.ui.text.size-texts {
+  font-size: 24px;
+  font-weight: 400;
+  font-style: bold;
+  @media only screen and (max-width: 1440px) {
+    font-size: 20px;
+  }
+
+  @media only screen and (max-width: 1050px) {
+    font-size: 22px;
+  }
+}
+
+.ui.text.size-textmd {
+  font-size: 48px;
+  font-weight: 400;
+  font-style: normal;
+  @media only screen and (max-width: 1440px) {
+    font-size: 40px;
+  }
+
+  @media only screen and (max-width: 1050px) {
+    font-size: 44px;
+  }
+
+  @media only screen and (max-width: 550px) {
+    font-size: 38px;
+  }
+}
+
+.ui.text.size-textlg {
+  font-size: 64px;
+  font-weight: 400;
+  font-style: normal;
+  @media only screen and (max-width: 1440px) {
+    font-size: 64px;
+  }
+
+  @media only screen and (max-width: 1050px) {
+    font-size: 48px;
+  }
+}
+
+.ui.text.size-textxl {
+  font-size: 96px;
+  font-weight: 400;
+  font-style: normal;
+  @media only screen and (max-width: 1440px) {
+    font-size: 96px;
+  }
+
+  @media only screen and (max-width: 1050px) {
+    font-size: 48px;
+  }
+}
+
+.ui.text {
+  color: var(--gray_200);
+  font-family: Montserrat;
+}
+
+/*-------------------------------------
+  2. Heading CSS
+--------------------------------------*/
+.ui.heading.size-headingxs {
+  font-size: 18px;
+  font-weight: 700;
+  font-style: bold;
+  @media only screen and (max-width: 1440px) {
+    font-size: 15px;
+  }
+}
+
+.ui.heading.size-headings {
+  font-size: 20px;
+  font-weight: 600;
+  font-style: bold;
+  @media only screen and (max-width: 1440px) {
+    font-size: 17px;
+  }
+}
+
+.ui.heading {
+  color: var(--black_900);
+  font-family: Montserrat;
+}
+
+/*-------------------------------------
+  3. Container CSS
+--------------------------------------*/
+.container-xs {
+  max-width: 1600px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}

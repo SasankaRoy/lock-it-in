@@ -1,0 +1,56 @@
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("fonts/MontserratRomanRegular.ttf");
+  font-family: "Montserrat";
+  font-weight: 400;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("fonts/MontserratRomanSemiBold.ttf");
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("fonts/LeagueGothicRegular.ttf");
+  font-family: "League Gothic";
+  font-weight: 400;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("fonts/LeagueGothicRegularRegular.ttf");
+  font-family: "League Gothic";
+  font-weight: 400;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("fonts/MontserratRomanBold.ttf");
+  font-family: "Montserrat";
+  font-weight: 700;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("fonts/MontserratRomanMedium.ttf");
+  font-family: "Montserrat";
+  font-weight: 500;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("fonts/PoppinsRegular.ttf");
+  font-family: "Poppins";
+  font-weight: 400;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("fonts/PoppinsLight.ttf");
+  font-family: "Poppins";
+  font-weight: 300;
+}
