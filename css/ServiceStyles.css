@@ -1,0 +1,66 @@
+/*=========== TABLE OF CONTENTS ===========
+1. CSS Variables
+2. Utility CSS
+==========================================*/
+
+/*-------------------------------------
+  1. CSS Variables
+--------------------------------------*/
+:root {
+  /*------Color variables------*/
+  --black_900: #000000;
+  --black_900_26: #00000026;
+  --black_900_3f: #0000003f;
+  --black_900_7f: #0000007f;
+  --blue_200: #87ceeb;
+  --blue_200_e5: #87ceebe5;
+  --blue_300: #6fc5e8;
+  --blue_900: #004290;
+  --blue_gray_100: #d9d9d9;
+  --gray_200: #eeeeee;
+  --gray_900: #202020;
+  --indigo_900: #002d62;
+  --white_a700: #ffffff;
+  --white_a700_00: #ffffff00;
+  --white_a700_7f: #ffffff7f;
+
+  /*------Shadow variables------*/
+  --shadow-xs: 0 0 4px 2px #00000026;
+
+  /*------Border radius variables------*/
+  --radius-xs: 1px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-xl: 30px;
+  --radius-2xl: 32px;
+  --radius-3xl: 50px;
+
+  /*------Spacing variables------*/
+  --space-xs: 12px;
+  --space-sm: 14px;
+  --space-md: 16px;
+  --space-lg: 20px;
+  --space-xl: 24px;
+  --space-2xl: 28px;
+  --space-3xl: 32px;
+  --space-4xl: 48px;
+  --space-5xl: 94px;
+}
+
+/*-------------------------------------
+  2. Utility CSS
+--------------------------------------*/
+.flex-col-center-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-row-center-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
