@@ -398,7 +398,7 @@
 
 .about-us .rectangle-wrapper {
   height: 1080px;
-  background-image: url(./img/34011389-20210204-a2131-1.png);
+  background-image: url('../img/34011389-20210204-a2131-1.png');
   background-size: cover;
   background-position: 50% 50%;
 }
@@ -422,6 +422,7 @@
   height: 392px;
   top: 243px;
   left: 1105px;
+  
 }
 
 .about-us .why-were-passionate-wrapper {
@@ -650,7 +651,7 @@
 
 .about-us .bg-2 {
   height: 1080px;
-  background-image: url(./img/00029-1.png);
+  background-image: url('../img/00029-1.png');
   background-size: cover;
   background-position: 50% 50%;
   position: absolute;

@@ -12,7 +12,7 @@
         <div class="about-hero">
           <div class="overlap-group">
             <div class="bg"><div class="rectangle"></div></div>
-            <div class="top-nav">
+            <div class="top-nav navBar__mainWrapper">
               <div class="navbar">
                 <a href="index.html" class="text-wrapper"> Home</a>
                 <a href="/about.html" class="text-wrapper-2">About Us</a>
@@ -40,9 +40,13 @@
                 </div>
               </div>
             </div>
-            <div class="social-and-contact">
-              <img class="social-media" src="img/social-media.png" />
-              <div class="email">
+
+            <div class="social-and-contact announcement__mainWrapper">
+              <img
+                class="social-media announcement__socialIcon"
+                src="img/social-media.png"
+              />
+              <div class="email announcement__Email">
                 <img class="img" src="img/email-1.svg" />
                 <input
                   class="example-gmail-com"
@@ -50,19 +54,20 @@
                   type="email"
                 />
               </div>
-              <div class="phone">
+              <div class="phone announcement__Phone">
                 <div class="text-wrapper-3">+1 232-842-4938</div>
                 <img class="img" src="img/phone-call-1.svg" />
               </div>
             </div>
+
             <div class="text">
-              <div class="title">
+              <div class="title empowering__mainWrapper">
                 <img
                   class="empowering-your-path"
                   src="img/empowering-your-path-to-homeownership.png"
                 />
               </div>
-              <div class="sub">
+              <div class="sub heroSec__smallPara">
                 <p class="at-lock-it-in-we-re">
                   At Lock It In!, we&#39;re redefining home financing with
                   innovative solutions that offer flexibility, affordability,
@@ -71,7 +76,7 @@
                   goals.
                 </p>
               </div>
-              <button class="CTA">
+              <button class="CTA heroSec__learnMoreBtn">
                 <div class="ellipse"></div>
                 <div class="frame-2">
                   <div class="learn-more">LEARN MORE</div>
@@ -80,7 +85,7 @@
                 <img class="frame-3" src="img/frame-5-2.svg" />
               </button>
             </div>
-            <div class="hero-img">
+            <div class="hero-img herSec__imgWrapper">
               <img
                 class="reviewing-house-loan"
                 src="img/reviewing-house-loan-contract-with-agent-using-calculator-enthus.png"
@@ -88,6 +93,7 @@
             </div>
           </div>
         </div>
+
         <div class="about-our-mission">
           <div class="overlap">
             <div class="overlap-group-wrapper">
@@ -103,7 +109,7 @@
                 />
               </div>
               <div class="div-wrapper">
-                <p class="p">
+                <p class="p whyWeare__para">
                   Our commitment is rooted in the belief that everyone deserves
                   a clear and attainable path to homeownership. Through
                   innovative financing solutions, we’re transforming the way
@@ -111,7 +117,7 @@
                   achieve their dreams.
                 </p>
               </div>
-              <div class="tag">
+              <div class="tag ourMission__smallTag">
                 <div class="text-wrapper-4">OUR MISSION</div>
               </div>
             </div>
@@ -166,6 +172,7 @@
             </div>
           </div>
         </div>
+
         <div class="about-our-vision">
           <div class="overlap-group">
             <div class="bg-2"><div class="rectangle-3"></div></div>
@@ -175,7 +182,7 @@
                   OUR VISION FOR THE FUTURE OF HOMEOWNERSHIP
                 </p>
               </div>
-              <div class="sub-2">
+              <div class="sub-2 ourVision__para">
                 <p class="p">
                   We envision a world where innovative financing options empower
                   everyone to achieve homeownership. Our goal is to break down
@@ -183,11 +190,11 @@
                   pathways to owning a home.
                 </p>
               </div>
-              <div class="tag">
+              <div class="tag ourVision__smallTag">
                 <div class="text-wrapper-4">OUR VISION</div>
               </div>
             </div>
-            <div class="frame-wrapper">
+            <div class="frame-wrapper ourVision__LearnBTN">
               <div class="frame-4">
                 <div class="get-free-quote-3">LEARN MORE</div>
                 <div class="learn-more-3">LEARN MORE</div>
@@ -209,6 +216,7 @@
             </div>
           </div>
         </div>
+
         <div class="about-our-founder">
           <div class="our-founder">
             <div class="text-4">
@@ -247,7 +255,7 @@
             <div class="our-founder-wrapper">
               <div class="our-founder-2">OUR FOUNDER</div>
             </div>
-            <div class="handsome-fashion-man-wrapper">
+            <div class="handsome-fashion-man-wrapper founderImg__wrapper">
               <img
                 class="handsome-fashion-man"
                 src="img/handsome-fashion-man-posing-1.png"
@@ -255,6 +263,7 @@
             </div>
           </div>
         </div>
+
         <div class="about-stats">
           <div class="stats">
             <div class="element">
@@ -279,6 +288,7 @@
             </div>
           </div>
         </div>
+
         <footer class="footer">
           <div class="overlap-4">
             <div class="frame-5">
@@ -375,6 +385,198 @@
             </div>
           </div>
         </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+        <script>
+          gsap.registerPlugin(ScrollTrigger);
+          const announcement__mainWrapper = document.querySelector(
+            ".announcement__mainWrapper"
+          );
+          const announcement__socialIcon = document.querySelector(
+            ".announcement__socialIcon"
+          );
+          const announcement__Email = document.querySelector(
+            ".announcement__Email"
+          );
+          const announcement__Phone = document.querySelector(
+            ".announcement__Phone"
+          );
+
+          const gsapTL = new gsap.timeline();
+
+          gsapTL
+            .from(announcement__mainWrapper, {
+              duration: 0.8,
+              ease: "power1.out",
+              y: "-20%",
+              opacity: 0,
+            })
+            .from(announcement__socialIcon, {
+              duration: 0.8,
+              ease: "power1.out",
+              scale: 0.3,
+              opacity: 0,
+            })
+            .from(announcement__Email, {
+              duration: 0.6,
+              ease: "power1.out",
+              scale: 0.3,
+              opacity: 0,
+            })
+            .from(announcement__Phone, {
+              duration: 0.6,
+              ease: "power1.out",
+              scale: 0.3,
+              opacity: 0,
+            });
+
+          gsap.from(".navBar__mainWrapper", {
+            duration: 1,
+            ease: "power1.out",
+            y: "-50%",
+            opacity: 0,
+          });
+
+          gsap.from(".empowering__mainWrapper", {
+            duration: 1,
+            ease: "power1.out",
+            x: "-50%",
+            opacity: 0,
+          });
+          gsap.from(".heroSec__smallPara", {
+            duration: 1,
+            ease: "power1.out",
+            x: "50%",
+            opacity: 0,
+          });
+          gsap.from(".heroSec__learnMoreBtn", {
+            duration: 1,
+            ease: "power1.out",
+            scale: 0.3,
+            opacity: 0,
+          });
+          gsap.from(".herSec__imgWrapper", {
+            duration: 1,
+            ease: "power1.out",
+            scale: 0.8,
+            opacity: 0,
+          });
+
+          gsap.from(".why-were-passionate-wrapper", {
+            duration: 0.8,
+            ScrollTrigger: {
+              trigger: ".why-were-passionate-wrapper",
+              toggleActions: "restart none none none",
+              markers: false,
+            },
+            x: "50%",
+            opacity: 0,
+          });
+          gsap.from(".whyWeare__para", {
+            duration: 1,
+            ScrollTrigger: {
+              trigger: ".whyWeare__para",
+              toggleActions: "restart none none none",
+              markers: false,
+            },
+            x: "50%",
+            opacity: 0,
+          });
+          gsap.from(".ourMission__smallTag", {
+            duration: 0.6,
+            ScrollTrigger: {
+              trigger: ".ourMission__smallTag",
+              toggleActions: "restart none none none",
+              markers: false,
+            },
+            x: "50%",
+            opacity: 0,
+          });
+          gsap.from(".leran-more", {
+            duration: 0.6,
+            ScrollTrigger: {
+              trigger: ".leran-more",
+              toggleActions: "restart none none none",
+              markers: false,
+            },
+            scale: 0.4,
+            opacity: 0,
+          });
+
+          gsap.from(".our-vision-for-the-wrapper", {
+            duration: 1,
+            ScrollTrigger: {
+              trigger: ".our-vision-for-the-wrapper",
+              toggleActions: "restart none none none",
+              markers: false,
+            },
+            x: "-50%",
+            opacity: 0,
+          });
+          gsap.from(".ourVision__para", {
+            duration: 1.3,
+            ScrollTrigger: {
+              trigger: ".ourVision__para",
+              toggleActions: "restart none none none",
+              markers: false,
+            },
+            x: "-50%",
+            opacity: 0,
+          });
+          gsap.from(".ourVision__smallTag", {
+            duration: 0.7,
+            ScrollTrigger: {
+              trigger: ".ourVision__smallTag",
+              toggleActions: "restart none none none",
+              markers: false,
+            },
+            x: "-50%",
+            opacity: 0,
+          });
+          gsap.from(".ourVision__LearnBTN", {
+            duration: 0.7,
+            ScrollTrigger: {
+              trigger: ".ourVision__LearnBTN",
+              toggleActions: "restart none none none",
+              markers: false,
+            },
+            scale: 0.4,
+            opacity: 0,
+          });
+          gsap.from(".joe-speziale-CFA-CPA-wrapper", {
+            duration: 0.7,
+            ScrollTrigger: {
+              trigger: ".joe-speziale-CFA-CPA-wrapper",
+              toggleActions: "restart none none none",
+              markers: false,
+            },
+            x: "40%",
+            opacity: 0,
+          });
+          gsap.from(".joe-s-first-client-wrapper", {
+            duration: 1.2,
+            ScrollTrigger: {
+              trigger: ".joe-s-first-client-wrapper",
+              toggleActions: "restart none none none",
+              markers: false,
+            },
+            x: "40%",
+            opacity: 0,
+          });
+          gsap.from(".founderImg__wrapper", {
+            duration: 1.2,
+            ScrollTrigger: {
+              trigger: ".founderImg__wrapper",
+              toggleActions: "restart none none none",
+              markers: false,
+            },
+            scale: 0.3,
+            opacity: 0,
+          });
+        </script>
       </div>
     </div>
   </body>
