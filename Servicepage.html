@@ -67,6 +67,7 @@
             </div>
           </div>
         </header>
+
         <div class="rowtailored">
           <div class="columnlockitin">
             <div class="row_one">
@@ -85,14 +86,20 @@
                     />
                   </div>
                   <div class="menu">
-                    <p class="home ui text size-texts">Home</p>
-                    <p class="aboutus ui text size-texts">About Us</p>
-                    <h1 class="services-1 ui heading size-headingxs">
-                      Services
-                    </h1>
+                    <a href="index.html" class="home ui text size-texts"
+                      >Home</a
+                    >
+                    <a href="about.html" class="aboutus ui text size-texts"
+                      >About Us</a
+                    >
+                    <a href="Servicepage.html">
+                      <h1 class="services-1 ui heading size-headingxs">
+                        Services
+                      </h1>
+                    </a>
                     <p class="aboutus ui text size-texts">Payment Calculator</p>
                     <p class="aboutus ui text size-texts">Blog</p>
-                    <a href="#" class="services-1">
+                    <a href="Contact.html" class="services-1">
                       <p class="home ui text size-texts">Contact Us</p>
                     </a>
                   </div>
@@ -104,7 +111,7 @@
             </div>
             <div class="column container-xs">
               <div class="columntailored">
-                <p class="tailored ui text size-text2xl">
+                <p class="tailored ui text size-text2xl heroSec__mainHeading">
                   <span class="tailored-span"> Tailored&nbsp;</span>
                   <span class="tailored-span-1">
                     Financing Solutions for Every Homebuyer</span
@@ -137,10 +144,12 @@
         <div class="flex-col-center-center ourservices-2">
           <div class="column_one container-xs">
             <div class="columnour">
-              <button class="flex-row-center-center our_services">
+              <button
+                class="flex-row-center-center our_services our_servicesBTN"
+              >
                 Our Services
               </button>
-              <p class="exploreour ui text size-textxl">
+              <p class="exploreour ui text size-textxl our_servicesHeading">
                 Explore Our Comprehensive Home Financing Services
               </p>
               <p class="description ui text size-texts">
@@ -240,7 +249,7 @@
           <div class="stack">
             <div class="stackfile1two">
               <div class="rowfile1two_one">
-                <div class="img">
+                <div class="img image__mainWrapper">
                   <img
                     src="img/img_file_1_2.png"
                     alt="File1two"
@@ -263,7 +272,10 @@
                   </p>
                 </div>
               </div>
-              <button class="flex-row-center-center contact_us">
+              <button
+                style="display: none"
+                class="flex-row-center-center contact_us"
+              >
                 CONTACT US
               </button>
             </div>
@@ -428,20 +440,122 @@
       <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 
       <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-      <script src="./js/main.js" />
 
-      <script >
-        const socialmedia = document.querySelector(".socialmedia");
-
-        // gsap.registerPlugin(ScrollTrigger);
+      <script>
+        gsap.registerPlugin(ScrollTrigger);
         const gsapTL = new gsap.timeline();
 
-        gsap.from(socialmedia, {
+        gsap.from(".socialmedia", {
           y: "-50%",
           opacity: 0,
           duration: 1,
           ease: "power2.inOut",
           stagger: 0.3,
+        });
+
+        gsap.from(".rowvector_one", {
+          y: "-50%",
+          opacity: 0,
+          duration: 1,
+          ease: "power2.inOut",
+          stagger: 0.3,
+        });
+        gsap.from(".rowlockitin_one", {
+          y: "-50%",
+          opacity: 0,
+          duration: 1,
+          ease: "power2.inOut",
+        });
+
+        gsapTL
+          .from(".heroSec__mainHeading", {
+            duration: 1,
+            ease: "power2.out",
+            x: "-50%",
+            opacity: 0,
+          })
+          .from(".description-1", {
+            duration: 1,
+            ease: "power2.out",
+            x: "-50%",
+            opacity: 0,
+          })
+          .from(".learn_more", {
+            duration: 1,
+            ease: "power2.out",
+            x: "-50%",
+            opacity: 0,
+          });
+
+        gsap.from(".our_servicesBTN", {
+          scrollTrigger: {
+            trigger: ".our_servicesBTN",
+            toggleActions: "restart none none none",
+          },
+          duration: 0.6,
+          x: "40%",
+          opacity: 0,
+          ease: "power2.out",
+        });
+        gsap.from(".our_servicesHeading", {
+          scrollTrigger: {
+            trigger: ".our_servicesHeading",
+            toggleActions: "restart none none none",
+          },
+          duration: 0.6,
+          x: "40%",
+          opacity: 0,
+          ease: "power2.out",
+        });
+        gsap.from(".description", {
+          scrollTrigger: {
+            trigger: ".description",
+            toggleActions: "restart none none none",
+          },
+          duration: 0.6,
+          scale: 0.4,
+          opacity: 0,
+          ease: "power2.out",
+        });
+        gsap.from(".service", {
+          scrollTrigger: {
+            trigger: ".service",
+            toggleActions: "restart none none none",
+          },
+          duration: 1,
+          scale: 0.4,
+          opacity: 0,
+          ease: "power2.out",
+        });
+        gsap.from(".image__mainWrapper", {
+          scrollTrigger: {
+            trigger: ".image__mainWrapper",
+            toggleActions: "restart none none none",
+          },
+          duration: 1,
+          x: "-50%",
+          opacity: 0,
+          ease: "power2.out",
+        });
+        gsap.from(".takethenext", {
+          scrollTrigger: {
+            trigger: ".takethenext",
+            toggleActions: "restart none none none",
+          },
+          duration: 1,
+          x: "50%",
+          opacity: 0,
+          ease: "power2.out",
+        });
+        gsap.from(".description-5", {
+          scrollTrigger: {
+            trigger: ".description-5",
+            toggleActions: "restart none none none",
+          },
+          duration: 1.5,
+          x: "50%",
+          opacity: 0,
+          ease: "power2.out",
         });
       </script>
     </div>
