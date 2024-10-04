@@ -85,8 +85,12 @@
                     />
                   </div>
                   <div class="menu">
-                    <a href="index.html" class="home ui text size-textxs">Home</a>
-                    <a href="about.html" class="aboutus ui text size-textxs">About Us</a>
+                    <a href="index.html" class="home ui text size-textxs"
+                      >Home</a
+                    >
+                    <a href="about.html" class="aboutus ui text size-textxs"
+                      >About Us</a
+                    >
                     <p class="aboutus ui text size-textxs">Services</p>
                     <p class="aboutus ui text size-textxs">
                       Payment Calculator
@@ -123,25 +127,30 @@
       <div class="contactpage-1">
         <div class="rowcontact_us container-xs">
           <div class="columncontact">
-            <button class="flex-row-center-center contact_us">
+            <button
+              class="flex-row-center-center contact_us contactUs__smallTag"
+            >
               Contact us
             </button>
-            <p class="letsgetin ui text size-textlg">Let’s get in touch</p>
-            <p class="pellentesquein ui text size-textxs">
+            <p class="letsgetin ui text size-textlg contact__InTouchText">
+              Let’s get in touch
+            </p>
+            <p class="pellentesquein ui text size-textxs contact__smallpara">
               Pellentesque in ipsum id orci porta dapibus. Quisque velit nisi,
               pretium ut lacinia in, elementum id enim. Done
             </p>
             <div class="columnsubmit">
               <div class="columnfirstname">
                 <div class="rowfirstname">
-                  <label class="firstname">
+                  <label class="firstname contact__firstName">
                     <input
                       name="firstName"
                       placeholder="First Name"
                       type="text"
                     />
                   </label>
-                  <label class="firstname">
+
+                  <label class="firstname contact__lastName">
                     <input
                       name="lastName"
                       placeholder="Last Name"
@@ -149,42 +158,55 @@
                     />
                   </label>
                 </div>
+
                 <div class="rowfirstname">
-                  <label class="firstname">
+                  <label class="firstname contact__firstName">
                     <input
                       name="phoneNumber"
                       placeholder="Phone number"
                       type="number"
                     />
                   </label>
-                  <label class="firstname">
+                  <label class="firstname contact__lastName">
                     <input name="email" placeholder="Email ID" type="email" />
                   </label>
                 </div>
-                <select name="icroundarrowlef" class="icroundarrowlef">
+
+                <select
+                  name="icroundarrowlef"
+                  class="icroundarrowlef contact__selecte"
+                >
                   <option value="option1">Option1</option>
                   <option value="option2">Option2</option>
                   <option value="option3">Option3</option>
                 </select>
+
                 <textarea
                   name="message"
                   placeholder="Message"
-                  class="message"
+                  class="message contact__message"
                 ></textarea>
               </div>
-              <button class="flex-row-center-center submit">Submit</button>
+              <button class="flex-row-center-center submit contact__submitBTN">
+                Submit
+              </button>
             </div>
           </div>
+
           <div class="rowdivider_one">
             <div class="divider_one"></div>
             <div class="right">
               <div class="call">
-                <p class="callus ui text size-textmd">Call Us</p>
-                <p class="pellentesquein-1 ui text size-textxs">
+                <p class="callus ui text size-textmd contact__callUs">
+                  Call Us
+                </p>
+                <p
+                  class="pellentesquein-1 ui text size-textxs contact__callUsPara"
+                >
                   Pellentesque in ipsum id orci porta dapibus. Quisque velit
                   nisi, pretium ut lacinia in, elementum id enim. Done
                 </p>
-                <div class="rowcall_three">
+                <div class="rowcall_three contact__callUsNum">
                   <button class="call_three">
                     <img src="img/img_call_white_a700.svg" />
                   </button>
@@ -192,12 +214,12 @@
                 </div>
               </div>
               <div class="call">
-                <p class="callus ui text size-textmd">Email</p>
-                <p class="pellentesquein-1 ui text size-textxs">
+                <p class="callus ui text size-textmd contact__emaill">Email</p>
+                <p class="pellentesquein-1 ui text size-textxs contact__emailPara">
                   Pellentesque in ipsum id orci porta dapibus. Quisque velit
                   nisi, pretium ut lacinia in, elementum id enim. Done
                 </p>
-                <div class="rowcall_three">
+                <div class="rowcall_three contact__emailMail">
                   <button class="call_three">
                     <img src="img/img_lock.svg" />
                   </button>
@@ -382,6 +404,29 @@
       const cantacthero__description = document.querySelector(
         ".cantacthero__description"
       );
+      const contactUs__smallTag = document.querySelector(
+        ".contactUs__smallTag"
+      );
+      const contact__InTouchText = document.querySelector(
+        ".contact__InTouchText"
+      );
+      const contact__smallpara = document.querySelector(".contact__smallpara");
+      const contact__firstName = document.querySelectorAll(
+        ".contact__firstName"
+      );
+      const contact__lastName = document.querySelectorAll(".contact__lastName");
+      const contact__selecte = document.querySelector(".contact__selecte");
+      const contact__message = document.querySelector(".contact__message");
+      const contact__submitBTN = document.querySelector(".contact__submitBTN");
+      const contact__callUs = document.querySelector(".contact__callUs");
+      const contact__callUsPara = document.querySelector(
+        ".contact__callUsPara"
+      );
+      const contact__callUsNum = document.querySelector(".contact__callUsNum");
+      const contact__emaill = document.querySelector(".contact__emaill");
+      const contact__emailPara = document.querySelector(".contact__emailPara");
+      const contact__emailMail = document.querySelector(".contact__emailMail");
+
       const gsapTL = new gsap.timeline();
 
       gsapTL.from(announcment__Wrapper, {
@@ -420,6 +465,165 @@
         scale: 0.3,
         ease: "power1.out",
       });
+
+      gsap.from(contactUs__smallTag, {
+        scrollTrigger: {
+          trigger: contactUs__smallTag,
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        x: "-40%",
+        opacity: 0,
+        duration: 0.8,
+        ease: "power1.out",
+      });
+      gsap.from(contact__InTouchText, {
+        scrollTrigger: {
+          trigger: contact__InTouchText,
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        x: "-40%",
+        opacity: 0,
+        duration: 1,
+        ease: "power1.out",
+      });
+      gsap.from(contact__smallpara, {
+        scrollTrigger: {
+          trigger: contact__smallpara,
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        x: "-40%",
+        opacity: 0,
+        duration: 1.3,
+        ease: "power1.out",
+      });
+      gsap.from(contact__firstName, {
+        scrollTrigger: {
+          trigger: contact__firstName,
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        x: "-40%",
+        opacity: 0,
+        duration: 1.3,
+        ease: "power1.out",
+      });
+      gsap.from(contact__lastName, {
+        scrollTrigger: {
+          trigger: contact__lastName,
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        x: "40%",
+        opacity: 0,
+        duration: 1.3,
+        ease: "power1.out",
+      });
+      gsap.from(contact__selecte, {
+        scrollTrigger: {
+          trigger: contact__selecte,
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        x: "-40%",
+        opacity: 0,
+        duration: 1.3,
+        ease: "power1.out",
+      });
+      gsap.from(contact__message, {
+        scrollTrigger: {
+          trigger: contact__message,
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        x: "-40%",
+        opacity: 0,
+        duration: 1.3,
+        ease: "power1.out",
+      });
+      gsap.from(contact__submitBTN, {
+        scrollTrigger: {
+          trigger: contact__submitBTN,
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        x: "-40%",
+        opacity: 0,
+        duration: 1.3,
+        ease: "power1.out",
+      });
+      gsap.from(contact__callUs, {
+        scrollTrigger: {
+          trigger: contact__callUs,
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        x: "-40%",
+        opacity: 0,
+        duration: 0.9,
+        ease: "power1.out",
+      });
+      gsap.from(contact__callUsPara, {
+        scrollTrigger: {
+          trigger: contact__callUsPara,
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        x: "-40%",
+        opacity: 0,
+        duration: 1.2,
+        ease: "power1.out",
+      });
+      gsap.from(contact__callUsNum, {
+        scrollTrigger: {
+          trigger: contact__callUsNum,
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        x: "-40%",
+        opacity: 0,
+        duration: 1.5,
+        ease: "power1.out",
+      });
+
+      gsap.from(contact__emaill, {
+        scrollTrigger: {
+          trigger: contact__emaill,
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        x: "-40%",
+        opacity: 0,
+        duration:.9,
+        ease: "power1.out",
+      });
+      gsap.from(contact__emailPara, {
+        scrollTrigger: {
+          trigger: contact__emailPara,
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        x: "-40%",
+        opacity: 0,
+        duration: 1.2,
+        ease: "power1.out",
+      });
+      gsap.from(contact__emailMail, {
+        scrollTrigger: {
+          trigger: contact__emailMail,
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        x: "-40%",
+        opacity: 0,
+        duration: 1.5,
+        ease: "power1.out",
+      });
+
+
+
     </script>
   </body>
 </html>

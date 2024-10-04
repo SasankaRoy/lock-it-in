@@ -227,7 +227,7 @@
 
 .bg {
   height: 1016px;
-  background-image: url('../img/img_bg.png');
+  background-image: url("../img/img_bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   @media only screen and (max-width: 1440px) {
@@ -462,6 +462,7 @@
   @media only screen and (max-width: 1050px) {
     align-self: stretch;
   }
+  overflow-x: hidden !important;
 }
 
 .contact_us {
@@ -596,10 +597,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
   @media only screen and (max-width: 1050px) {
     flex-direction: column;
     width: 100%;
   }
+  
 }
 
 .divider_one {
@@ -619,6 +622,7 @@
   width: 94%;
   flex-direction: column;
   align-items: end;
+  overflow-x: hidden;
   @media only screen and (max-width: 1050px) {
     width: 100%;
   }
