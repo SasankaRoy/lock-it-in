@@ -2824,7 +2824,7 @@
   flex-direction: column;
 }
 
-.question__buyerMainWrapper{
+.question__buyerMainWrapper {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -2843,7 +2843,7 @@
 .questionText__wrapper {
   width: 70%;
 }
-.question__heading{
+.question__heading {
   font-size: 1.5vw;
   font-weight: 600;
   font-family: "Montserrat";
@@ -2856,15 +2856,15 @@
   justify-content: space-evenly;
   align-items: center;
 }
-.answer__Wrapper select{
+.answer__Wrapper select {
   width: 100%;
-  padding:10px;
+  padding: 10px;
   border-radius: 5px;
   outline: none;
   font-size: 1vw;
   font-weight: 600;
   font-family: "Montserrat";
-color: rgba(0, 0, 0, 0.7);
+  color: rgba(0, 0, 0, 0.7);
 }
 .questionText__wrapper p {
   font-size: 1.2vw;
@@ -2895,6 +2895,22 @@ color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   outline: none;
   border: none;
+  cursor: pointer;
+}
+
+.continue__BTN {
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: "League Gothic";
+  font-weight: 400;
+  font-size: 2.2vw;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #004291 0%, #6fc6e9 100%);
+  color: white;
+  border-radius: 10px;
+  border:none;
+  outline:none;
   cursor: pointer;
 }
 
