@@ -7,7 +7,19 @@ const aboutSvgCircleLight = document.getElementById("aboutSvg__circleLight");
 const aboutSmallTag = document.getElementById("about__smallTag");
 
 
-console.log('test in line 10')
+const popUpModel__mainOuterWrapper = document.getElementById(
+  "popUpModel__mainOuterWrapper"
+);
+
+console.log("test in line 10");
+
+const handleShowPopUp = (hideAndShow) => {
+  if (hideAndShow === "show") {
+    popUpModel__mainOuterWrapper.style.display = "flex";
+    return;
+  }
+  popUpModel__mainOuterWrapper.style.display = "none";
+};
 
 gsap.registerPlugin(ScrollTrigger);
 const gsapTL = new gsap.timeline();
@@ -342,7 +354,7 @@ gsap.from(".contact__formWrapper", {
     markers: false,
   },
   opacity: 0,
-  scale:.3,
+  scale: 0.3,
   duration: 0.8,
   ease: "power1.out",
   delay: 0.1,
@@ -384,8 +396,6 @@ gsap.from(".text-10", {
   delay: 0.1,
 });
 
-
-
 gsap.from(".contact__phoneIcon", {
   scrollTrigger: {
     trigger: ".contact__phoneIcon",
@@ -393,7 +403,7 @@ gsap.from(".contact__phoneIcon", {
     markers: false,
   },
   opacity: 0,
-  scale:.3,
+  scale: 0.3,
   duration: 0.8,
   ease: "power1.out",
   delay: 0.1,
@@ -405,7 +415,7 @@ gsap.from(".contact__emailIcon", {
     markers: false,
   },
   opacity: 0,
-  scale:.3,
+  scale: 0.3,
   duration: 0.8,
   ease: "power1.out",
   delay: 0.1,
@@ -417,7 +427,7 @@ gsap.from(".contact__locationIcon", {
     markers: false,
   },
   opacity: 0,
-  scale:.3,
+  scale: 0.3,
   duration: 0.8,
   ease: "power1.out",
   delay: 0.1,
@@ -429,7 +439,7 @@ gsap.from(".text-wrapper-40", {
     markers: false,
   },
   opacity: 0,
-  x:'50%',
+  x: "50%",
   duration: 0.8,
   ease: "power1.out",
   delay: 0.1,
@@ -441,12 +451,11 @@ gsap.from(".text-wrapper-41", {
     markers: false,
   },
   opacity: 0,
-  x:'50%',
+  x: "50%",
   duration: 0.8,
   ease: "power1.out",
   delay: 0.1,
 });
-
 
 // const handleAnimate = () => {
 //   console.log("the time interval");
