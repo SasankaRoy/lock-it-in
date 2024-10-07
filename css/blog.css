@@ -1,0 +1,247 @@
+.blogHero__bg {
+  height: 1016px;
+  background-image: url("../img/BlogHeroBg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  @media only screen and (max-width: 1440px) {
+    height: auto;
+  }
+
+  @media only screen and (max-width: 1050px) {
+    height: auto;
+  }
+}
+
+.columnlockitin {
+  gap: 10px;
+  background: transparent !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media only screen and (max-width: 1440px) {
+    gap: 10px;
+  }
+}
+.blog__heroSectionMainWrapper {
+  width: 85%;
+  height: 50%;
+  margin: 0 auto;
+}
+.blog__heroSecTextWrapper {
+  width: 70%;
+}
+.blog__heroHeading {
+  font-family: "League Gothic";
+  font-size: 3.5vw;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.gradiantText {
+  background: var(
+    --gradient,
+    linear-gradient(180deg, #004290 0%, #6fc6e9 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.blog__heroPara {
+  color: #202020;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1vw;
+  margin: 15px 0;
+  line-height: none;
+}
+
+.heroBlogShowcase__mainWrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 15px;
+  margin: 30px 0px;
+}
+
+.blog__sliderMainWrapper {
+  flex: 1;
+}
+.blogSlider__wrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  position: relative;
+}
+.blogSlider__wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+}
+
+.blogSlider__smallInfoMainWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.blogSlider__smallInfoMainWrapper h4 {
+  color: #fff;
+  font-family: "League Gothic";
+  font-size: 1.8vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.blogSlider__smallInfoMainWrapper h2 {
+  color: #fff;
+  font-family: "Montserrat";
+  font-size: 1.5vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 10px 0px;
+}
+.blogSlider__smallInfoMainWrapper p {
+  color: #fff;
+  font-family: "Montserrat";
+  font-size: 0.75vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.blog__showCaseWrapper {
+  flex: 1;
+}
+
+.blog__blogCard1 {
+  position: relative;
+}
+.blog__blogCard1 img {
+  width: auto;
+  height: 235px;
+  object-fit: cover;
+  filter: brightness(0.8);
+}
+.blog__blogCard2 {
+  position: relative;
+}
+.blog__blogCard2 img {
+  width: auto;
+  height: 235px;
+  object-fit: cover;
+  filter: brightness(0.8);
+  margin: 5px 0px;
+}
+.blog__smallInfoMainWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* width: 100%; */
+  height: 100%;
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.blog__smallInfoMainWrapper h2 {
+  color: #fff;
+  font-family: "Montserrat";
+  font-size: 1vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 10px 0px;
+}
+.blog__smallInfoMainWrapper p {
+  color: #fff;
+  font-family: "Montserrat";
+  font-size: 0.75vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 10px 0px;
+}
+
+.blog__listSection {
+  max-width: 1920px;
+}
+.blog__listMainWrapper {
+  margin: 0 auto;
+  width: 90%;
+}
+.blog__textMainWrapper {
+  width: 70%;
+  margin: 0 auto;
+}
+.blog__listHeading {
+  color: #000;
+  text-align: center;
+  font-family: "League Gothic";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.blog__listSmallPara {
+  color: #202020;
+  text-align: center;
+  font-family: "Montserrat";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  margin: 10px 0;
+}
+.blog__mainListBox {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 40px 0;
+  gap: 30px;
+}
+
+.blog__imgWrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.blog__imgWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog__title {
+  color: #2e2e2e;
+  font-family: "Montserrat";
+  font-size: 1vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 10px 0;
+}
+.blog__para {
+  color: #2e2e2e;
+  font-family: "Montserrat";
+  font-size: 0.85vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 10px 0;
+}
+.posted__date {
+  color: #202020;
+  font-family: "Montserrat";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
