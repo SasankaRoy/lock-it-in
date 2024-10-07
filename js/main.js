@@ -6,12 +6,13 @@ const aboutSvgCircleDark = document.getElementById("aboutSvg__circleDark");
 const aboutSvgCircleLight = document.getElementById("aboutSvg__circleLight");
 const aboutSmallTag = document.getElementById("about__smallTag");
 
-
 const popUpModel__mainOuterWrapper = document.getElementById(
   "popUpModel__mainOuterWrapper"
 );
+const mainMode__Wrapper = document.getElementById('mainMode__Wrapper')
+const mainWrapper__BuyersModel = document.getElementById('mainWrapper__BuyersModel');
 
-console.log("test in line 10");
+
 
 const handleShowPopUp = (hideAndShow) => {
   if (hideAndShow === "show") {
@@ -19,6 +20,15 @@ const handleShowPopUp = (hideAndShow) => {
     return;
   }
   popUpModel__mainOuterWrapper.style.display = "none";
+};
+
+const showBuyersModel = (hideAndShow) => {
+  if (hideAndShow === 'show') {
+    mainWrapper__BuyersModel.style.display = "flex";
+    mainMode__Wrapper.style.display = "none";
+    return
+  }
+  console.log("buyers model",hideAndShow);
 };
 
 gsap.registerPlugin(ScrollTrigger);
