@@ -11,6 +11,7 @@ const popUpModel__mainOuterWrapper = document.getElementById(
 );
 const mainMode__Wrapper = document.getElementById('mainMode__Wrapper')
 const mainWrapper__BuyersModel = document.getElementById('mainWrapper__BuyersModel');
+const mainWrapper__SellersModel = document.getElementById('mainWrapper__SellersModel');
 
 
 
@@ -28,6 +29,20 @@ const showBuyersModel = (hideAndShow) => {
     mainMode__Wrapper.style.display = "none";
     return
   }
+
+  mainWrapper__BuyersModel.style.display = "none";
+    mainMode__Wrapper.style.display = "flex";
+  console.log("buyers model",hideAndShow);
+};
+const showSellersModel = (hideAndShow) => {
+  if (hideAndShow === 'show') {
+    mainWrapper__SellersModel.style.display = "flex";
+    mainMode__Wrapper.style.display = "none";
+    return
+  }
+
+    mainWrapper__SellersModel.style.display = "none";
+    mainMode__Wrapper.style.display = "flex";
   console.log("buyers model",hideAndShow);
 };
 
