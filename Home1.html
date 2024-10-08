@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <img
+      alt="Logo"
+      src="https://appproject.dhiwise.com/dhiwise-logo.png?c=&v="
+      style="width: 0px; height: 0px; display: none"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/swiper@11.0.6/swiper.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/home.css" />
+    <link rel="stylesheet" type="text/css" href="./css/font.css" />
+    <link rel="stylesheet" type="text/css" href="./css/homestyles.css" />
+    <link rel="stylesheet" type="text/css" href="./css/homecomponents.css" />
+    <link rel="stylesheet" type="text/css" href="./css/homeindex.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11.0.6/swiper-bundle.min.js"
+      defer
+    ></script>
+    <script>
+      async function handleSlider() {
+        const slider = document.querySelector("#slider");
+
+        // Wait for all content to load before setting maxWidth
+        const imageList = slider.querySelectorAll("img");
+        const onLoadPromiseList = [];
+        for (const image of imageList) {
+          if (image.complete) continue;
+
+          const onLoadPromise = new Promise((resolve, reject) => {
+            if (image.complete) return resolve();
+            image.onload = resolve;
+            image.onerror = resolve;
+          });
+          onLoadPromiseList.push(onLoadPromise);
+        }
+        await Promise.all(onLoadPromiseList);
+
+        // Set max width and height to prevent slider from overflowing
+        slider.style.maxWidth = getComputedStyle(slider).width;
+        slider.style.maxHeight = getComputedStyle(slider).height;
+
+        const sliderParent = slider.parentElement;
+        const sliderTrack = document.querySelector("#slider > .swiper-wrapper");
+        const slides = document.querySelectorAll(
+          "#slider > .swiper-wrapper > .swiper-slide"
+        );
+
+        // Clone slides for infinite loop
+        const slidesToShow = 1;
+        const slidesRequired = 2;
+        for (
+          let i = 0;
+          slides.length <= slidesToShow && i <= slidesRequired - 1;
+          i++
+        ) {
+          const index = i % slidesToShow;
+          const clone = slides[index]?.cloneNode(true);
+          clone?.setAttribute("cloned", "");
+          sliderTrack?.appendChild(clone);
+        }
+
+        const swiper = new Swiper("#slider", {
+          grabCursor: true,
+          loop: true,
+          slidesOffsetAfter: -148,
+          slidesOffsetBefore: -724,
+          slidesPerView: 1,
+          navigation: {
+            prevEl: "#slider-control-prev",
+            nextEl: "#slider-control-next",
+          },
+          effect: "coverflow",
+          coverflowEffect: {
+            rotate: 0,
+            depth: 0,
+            modifier: 1,
+            slideShadows: false,
+          },
+          breakpoints: {
+            0: { slidesPerView: 1 },
+            551: { slidesPerView: 1 },
+            1051: { slidesPerView: 1 },
+            1441: { slidesPerView: 1 },
+          },
+        });
+      }
+
+      /**
+       * Hydrate slider #slider
+       */
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          await handleSlider();
+        } catch (error) {
+          console.error(error);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="home">
+      <div>
+        <div>
+          <div class="hero12">
+            <div class="rowheaderlogo">
+              <div class="column hero__mainWrapper">
+                <div id="heroSection__BgWrapper" class="heroSec__bg">
+                  <video autoplay muted loop>
+                    <source src="./img/banner.mp4" type="video/mp4" />
+                  </video>
+                </div>
+
+                <div class="columnheaderlog container-xs">
+                  <header id="navBar__mainWrapper" class="headerheaderlog">
+                    <img
+                      src="./img/img_header_logo.png"
+                      alt="Headerlogo"
+                      class="headerlogo_one"
+                    />
+                    <div class="menu">
+                      <ul class="rowhome">
+                        <li>
+                          <a href="index.html">
+                            <h5 class="home-1 ui heading size-headingxs">
+                              Home
+                            </h5>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="about.html" class="aboutus-link">
+                            <p class="aboutus-1 ui text size-texts">About Us</p>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="Servicepage.html" class="aboutus-link">
+                            <p class="aboutus-1 ui text size-texts">Services</p>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="aboutus-link">
+                            <p class="aboutus-1 ui text size-texts">
+                              Payment Calculator
+                            </p>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="blog.html" class="aboutus-link">
+                            <p class="aboutus-1 ui text size-texts">Blog</p>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="Contact.html" class="aboutus-link">
+                            <p class="aboutus-1 ui text size-texts">
+                              Contact Us
+                            </p>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <button class="flex-row-center-center get_free_quote">
+                      Get free quote
+                    </button>
+                  </header>
+                  <div id="heroSection__mainWraper" class="columntake_the">
+                    <div class="columnlockitinl">
+                      <p class="lockitinllc ui text size-textxl">
+                        Lock It In! LLC
+                      </p>
+                      <div class="columnlockitinl">
+                        <p class="calculateyour ui text size-text5xl">
+                          Alternative home
+                        </p>
+                        <div class="property">
+                          <p class="finance ui text size-text5xl">finance</p>
+                          <img
+                            src="./img/img_mask_group.svg"
+                            alt="Image"
+                            class="image-3"
+                          />
+                        </div>
+                      </div>
+                      <p class="price ui text size-textmd">
+                        ALTERNATIVE FINANCING to combat high interest rates
+                      </p>
+                    </div>
+                    <button class="flex-row-center-center take_the_quiz">
+                      Take the quiz
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="aboutus">
+            <div class="rowcreatefrom">
+              <div class="createfrom_one"></div>
+            </div>
+            <div class="bg-2">
+              <div class="flex-col-center-center column_two">               
+                <div class="column_one container-xs">   
+                  <div class="aboutSec__mainContentWrapper">
+                    <div class="about__graphicSectionWrapper">
+                     
+                        <div class="aboutus__videoBg">
+                          <svg
+                            width="1061"
+                            height="1061"
+                            viewBox="0 0 1061 1061"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g filter="url(#filter0_f_354_320)">
+                              <circle cx="530.5" cy="530.5" r="300.5" fill="#87CEEB" />
+                            </g>
+                            <defs>
+                              <filter
+                                id="filter0_f_354_320"
+                                x="0"
+                                y="0"
+                                width="1061"
+                                height="1061"
+                                filterUnits="userSpaceOnUse"
+                                color-interpolation-filters="sRGB"
+                              >
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feBlend
+                                  mode="normal"
+                                  in="SourceGraphic"
+                                  in2="BackgroundImageFix"
+                                  result="shape"
+                                />
+                                <feGaussianBlur
+                                  stdDeviation="115"
+                                  result="effect1_foregroundBlur_354_320"
+                                />
+                              </filter>
+                            </defs>
+                          </svg>
+                        </div>
+                        <div class="aboutSection__videoWrapper">
+                          <video muted loop autoplay>
+                            <source src="./img/AboutSecAnimation.mp4" type="video/mp4" />
+                          </video>
+                        </div>
+          
+                        <div id="aboutSvg__circleDark" class="aboutSvg__circleDark">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="163"
+                            height="163"
+                            viewBox="0 0 163 163"
+                            fill="none"
+                          >
+                            <circle cx="81.5" cy="81.5" r="81.5" fill="#002D62" />
+                          </svg>
+                        </div>
+          
+                        <div id="aboutSvg__circleLight" class="aboutSvg__circleLight">
+                          <svg
+                            width="200"
+                            height="200"
+                            viewBox="0 0 259 259"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle cx="129.5" cy="129.5" r="129.5" fill="#87CEEB" />
+                          </svg>
+                        </div>
+                      
+                    </div>
+                    <div class="columnabout_us">
+                      <button id="about__smallTag" class="flex-row-center-center about_us about__smalltag">
+                        About us
+                      </button>
+                      <p class="lockitin3xthree ui text size-text3xl aboutsection__LockItIn">
+                        <span class="solutionto-span">
+                          Lock It In! 3x3 Alternative Financing: <br
+                        /></span>
+                        <span class="solutionto-span-1">
+                          3-year 3% Alternative Financing</span
+                        >
+                      </p>
+                      <p class="description-1 ui text size-texts aboutSection__Paragraph">
+                        Lock It In! is an innovative financing solution designed
+                        to help potential buyers and sellers navigate high
+                        interest rates. With our novel 3x3 financing plan,
+                        potential buyers can secure a 3-year lease payment at a 3%
+                        interest rate in exchange for an upfront Lock It In!
+                        payment of 20% or more of the home&#39;s value (as
+                        negotiated). After 3 years the remaining balance of the
+                        property is paid in exchange for title to the home
+                        (otherwise the owner must return the upfront Lock It In!
+                        payment plus home price appreciation). Lock It In!
+                        financing closes in weeks, defers taxes, has lower fees
+                        and provides potential buyers and sellers with a win-win
+                        outcome!
+                      </p>
+                    </div>
+                  </div>               
+                  <div class="columncreatefro aboutSection__LearnMoreBTN">
+                    <div class="createfrom"></div>
+                    <div class="columngetfreequ">
+                      <a href="#">
+                        <p class="getfreequote ui text size-texts">
+                          Learn more
+                        </p>
+                      </a>
+                      <!-- <a href="#">
+                        <p class="learnmore ui text size-texts">Learn more</p>
+                      </a> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="flex-col-center-center whatwedo">
+          <div class="columnlearn container-xs">
+            <div class="whatWeOffer__mainWrapper">
+              <div class="columnwhat_we">
+                <button class="flex-row-center-center what_we_offer whatWeDoSec__tag">
+                  What we offer
+                </button>
+                <p class="solutionto ui text size-text3xl whatWeDoSec__solutionToHeight">
+                  <span class="solutionto-span"> Solution to High Rates:</span>
+                  <span class="solutionto-span-1">
+                    &nbsp;Lock It In! alternative Financing</span
+                  >
+                </p>
+                <h1 class="lockitin ui heading size-headings whatWeDoSec__subHeading">
+                  Lock It In! offers a flexible 3x3 Alternative Financing plan
+                  designed to benefit both potential buyers and sellers.
+                </h1>
+              </div>
+              <div class="whatWeOffer__grahicsWrapper">
+                <video loop autoplay muted>
+                  <source
+                    src="./img/what-we-do-video1.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+                </div>
+              </div>
+              
+            <button class="flex-row-center-center learn_more">
+              Learn more
+            </button>
+          </div>
+        </div>
+
+
+        <div class="columnpadlockon">
+          <div>
+            <div class="row_two">
+              <div class="calculator">
+                <img
+                  src="./img/img_padlock_1.svg"
+                  alt="Padlockone"
+                  class="padlockone_one"
+                />
+                <div class="columnslider container-xs">
+                  <div id="calculatorSection__titleWrapper" class="columnpayment">
+                    <button class="flex-row-center-center payment">
+                      Payment calculator
+                    </button>
+                    <p class="calculateyour ui text size-text3xl">
+                      <span class="calculateyour-span">
+                        Calculate Your&nbsp;</span
+                      >
+                      <span class="calculateyour-span-1">
+                        LOck it in! payment with Ease</span
+                      >
+                    </p>
+                    <p class="estimateyour ui text size-texts">
+                      Estimate your monthly payment and compare to conventional
+                      mortgage financing.
+                    </p>
+                  </div>
+                  <div>
+                    <div class="rowfooterlogo">
+                      <div class="listpurchasepri">
+                        <div class="columnslider-1">
+                          <div class="columnpurchasep">
+                            <p class="ui text size-textlg">Purchase price</p>
+                            <h2 class="price-1 ui heading size-headinglg">
+                              $1,000,000
+                            </h2>
+                          </div>
+                          <input
+                            type="range"
+                            min="1"
+                            max="100"
+                            value="60.08"
+                            class="slider_one"
+                          />
+                          <div class="rowprice">
+                            <p class="ui text size-texts">$50,000</p>
+                            <p class="ui text size-texts">$50,000,000</p>
+                          </div>
+                        </div>
+                        <div class="columnslider-1">
+                          <div class="columnpurchasep">
+                            <p class="ui text size-textlg">
+                              Lock it in! payment/Down
+                            </p>
+                            <h3 class="price-1 ui heading size-headinglg">
+                              $50,000
+                            </h3>
+                          </div>
+                          <input
+                            type="range"
+                            min="1"
+                            max="100"
+                            value="60.08"
+                            class="slider_one"
+                          />
+                          <div class="rowprice">
+                            <p class="ui text size-texts">3% or more</p>
+                            <p class="ui text size-texts">$50,000,000</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="finalscreen">
+                        <p class="yourmonthly ui text size-textmd">
+                          Your Monthly payment will be
+                        </p>
+                        <h4 class="ui heading size-headingxl">$1,640</h4>
+                        <p class="yourtotal ui text size-textmd">
+                          Your Total payment will be
+                        </p>
+                        <h5 class="ui heading size-headingxl">$1,040,000</h5>
+                        <div class="rowrate">
+                          <div class="rate">
+                            <p class="emilycarter ui text size-texts">Rate</p>
+                            <h6 class="ui heading size-headingmd">3.00%</h6>
+                          </div>
+                          <div class="rate">
+                            <p class="emilycarter ui text size-texts">APR</p>
+                            <h2 class="ui heading size-headingmd">3.54%</h2>
+                          </div>
+                          <button class="flex-row-center-center learn_more-2">
+                            Learn more
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row_two">
+            <div class="vs">
+              <div class="row_one container-xs">
+                <div class="rowcomparison">
+                  <img
+                    src="./img/img_rectangle_7.png"
+                    alt="Image"
+                    class="image_one"
+                  />
+                  <div class="columncompariso">
+                    <button class="flex-row-center-center comparison">
+                      Comparison
+                    </button>
+                    <p class="lockitin_one ui text size-text3xl">
+                      Lock It In! versus Traditional Financing
+                    </p>
+                    <p class="description-3 ui text size-texts">
+                      Discover the benefits of Lock It In! compared to
+                      traditional financing. See how our innovative approach
+                      offers flexibility, lower monthly payments, and more
+                      options for both Lessors <br />and Lessees.
+                    </p>
+                    <button class="flex-row-center-center learn_more">
+                      Learn more
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="rowinsightsadvi">
+          <div class="flex-col-center-center blogs2">
+            <div class="columnapril container-xs">
+              <div class="columninsightsa">
+                <button class="flex-row-center-center blog blogSec__smallTag">Blog</button>
+                <p class="whatour ui text size-text3xl blogSec__heading">
+                  <span class="solutionto-span">
+                    Insights & Advice for Your&nbsp;</span
+                  >
+                  <span class="solutionto-span-1"> Home Financing Journey</span>
+                </p>
+              </div>
+              <div class="listapril">
+                <div class="blog-1 blogSec__blogCard">
+                  <img
+                    src="./img/img_rectangle_438.png"
+                    alt="April 212024"
+                    class="april_212024"
+                  />
+                  <p class="april212024 ui text size-texts">April 21, 2024</p>
+                  <div class="columnloremipsu">
+                    <h2 class="loremipsum ui heading size-headings">
+                      Lorem ipsum dolor sit amet, consectetur.
+                    </h2>
+                    <p class="description-4 ui text size-texts">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Aenean eu ullamcorper libero. Nunc malesuada sem vel
+                      mauris viverra lobortis.
+                    </p>
+                  </div>
+                  <button class="flex-row-center-center read_more">
+                    Read more
+                  </button>
+                </div>
+                <div class="blog-1 blogSec__blogCard">
+                  <img
+                    src="./img/img_rectangle_438_320x484.png"
+                    alt="April 212024"
+                    class="april_212024"
+                  />
+                  <p class="april212024 ui text size-texts">April 21, 2024</p>
+                  <div class="columnloremipsu">
+                    <h3 class="loremipsum ui heading size-headings">
+                      Lorem ipsum dolor sit amet, consectetur.
+                    </h3>
+                    <p class="description-4 ui text size-texts">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Aenean eu ullamcorper libero. Nunc malesuada sem vel
+                      mauris viverra lobortis.
+                    </p>
+                  </div>
+                  <button class="flex-row-center-center read_more">
+                    Read more
+                  </button>
+                </div>
+                <div class="blog-1 blogSec__blogCard">
+                  <img
+                    src="./img/img_rectangle_438_1.png"
+                    alt="April 212024"
+                    class="april_212024"
+                  />
+                  <p class="april212024 ui text size-texts">April 21, 2024</p>
+                  <div class="columnloremipsu">
+                    <h4 class="loremipsum ui heading size-headings">
+                      Lorem ipsum dolor sit amet, consectetur.
+                    </h4>
+                    <p class="description-4 ui text size-texts">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Aenean eu ullamcorper libero. Nunc malesuada sem vel
+                      mauris viverra lobortis.
+                    </p>
+                  </div>
+                  <button class="flex-row-center-center read_more">
+                    Read more
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="row_three">
+          <div class="bg">
+            <div>
+              <div class="banner">
+                <div class="rowreadytosecur">
+                  <div class="rowmortgage3d banner__3dHouse">
+                    <img
+                      src="./img/img_mortgage_3d_asset.png"
+                      alt="Mortgage3d"
+                      class="mortgage3d_one"
+                    />
+                  </div>
+                  <div class="columnreadytose">
+                    <p class="readytosecure ui text size-text4xl banner__heading1">
+                      <span class="calculateyour-span">
+                        Ready to Secure Your <br
+                      /></span>
+                      <span class="readytosecure-span-1"> Future Home?</span>
+                    </p>
+                    <p class="estimateyour ui text size-texts banner__heading2">
+                      Take the next step toward homeownership with Lock It In!
+                    </p>
+                    <button class="flex-row-center-center contact_us-1 banner__ContactBTN">
+                      CONTACT US
+                    </button>
+                  </div>
+                </div>
+                <img
+                  src="./img/img_mortgage_3d_asset_656x984.png"
+                  alt="Mortgage3d"
+                  class="mortgage3d banner__3dHouse"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="testimonial">
+          <div class="columntestimoni">
+            <button class="flex-row-center-center testimonials-1  testimonialSection__Subheading">
+              Testimonials
+            </button>
+            <p class="whatour ui text size-text3xl testimonialSection__heading">
+              What Our Clients Are Saying
+            </p>
+            <p class="description ui text size-texts testimonialSection__paragraph">
+              Hear from homeowners and investors who have experienced the
+              benefits of Lock It In! See how our innovative financing solutions
+              have made their property dreams a reality.
+            </p>
+          </div>
+          <div class="testimonials testimonialSlider__mainWrapper">
+            <div class="rowbxsdownarrow">
+              <button id="slider-control-prev" class="bxsdownarrow">
+                <img src="./img/img_bxs_down_arrow.svg" />
+              </button>
+              <button id="slider-control-next" class="bxsdownarrow">
+                <img src="./img/img_bxs_down_arrow_blue_200.svg" />
+              </button>
+            </div>
+            <div id="slider" class="slider swiper">
+              <div class="swiper-wrapper">
+                <div class="dhi-group swiper-slide">
+                  <div class="card1">
+                    <div class="columnsarahthom">
+                      <img
+                        src="./img/img_ellipse_5.png"
+                        alt="Image"
+                        class="image-1"
+                      />
+                      <div class="flex-col-end-center card01-1">
+                        <img
+                          src="./img/img__22x24.png"
+                          alt="Image"
+                          class="image_one-2"
+                        />
+                        <h2 class="sarahthompson ui heading size-headings">
+                          Sarah Thompson
+                        </h2>
+                        <p class="firsttime ui text size-textxs">
+                          First-Time Homebuyer
+                        </p>
+                        <p class="lockitinmade ui text size-textxs">
+                          Lock It In! made buying my first home so much easier.
+                          The lower monthly payments gave me peace of mind, and
+                          the flexibility at the end of the lease was a huge
+                          advantage. I’m so glad I chose this option!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dhi-group swiper-slide">
+                  <div class="card2">
+                    <div class="columnmichael">
+                      <img
+                        src="./img/img_ellipse_5_120x120.png"
+                        alt="Image"
+                        class="image-2"
+                      />
+                      <div class="card01-2">
+                        <img
+                          src="./img/img__22x24.png"
+                          alt="Image"
+                          class="image_one-3"
+                        />
+                        <div class="columnmichael-1">
+                          <h3 class="ui heading size-headings">
+                            Michael Rodriguez
+                          </h3>
+                          <p class="graphic ui text size-textxs">
+                            Graphic Designer
+                          </p>
+                        </div>
+                        <p class="lockitinmade ui text size-textxs">
+                          As an investor, Lock It In! offered a smart way to
+                          maximize my returns while keeping my options open. The
+                          upfront payment structure and potential for property
+                          appreciation made this a great addition to my
+                          portfolio.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dhi-group swiper-slide">
+                  <div class="column-1">
+                    <img
+                      src="./img/img_ellipse_5_1.png"
+                      alt="Image"
+                      class="image"
+                    />
+                    <div class="card01">
+                      <img
+                        src="./img/img_.svg"
+                        alt="Image"
+                        class="image_one-1"
+                      />
+                      <div class="columnlockitinl">
+                        <h4 class="emilycarter ui heading size-headings">
+                          Emily Carter
+                        </h4>
+                        <p class="firsttime ui text size-textxs">
+                          Growing Family Homebuyer
+                        </p>
+                        <p class="lockitinmade ui text size-textxs">
+                          With Lock It In!, we were able to secure our dream
+                          home without the financial strain of traditional
+                          financing. The lower lease payments gave us breathing
+                          room, and the path to ownership was clear and
+                          straightforward.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="row_four">
+          <div class="bg-1">
+            <div class="rowtellus container-xs">
+              <div class="telluscard contact__formWrapper">
+                <p class="tellus ui text size-text3xl">Tell us</p>
+                <div class="columnyourmessa">
+                  <div class="columnname">
+                    <label class="name">
+                      <input name="name" placeholder="Your name" type="text" />
+                    </label>
+                    <label class="name">
+                      <input
+                        name="email"
+                        placeholder="Your Email ID"
+                        type="email"
+                      />
+                    </label>
+                  </div>
+                  <textarea
+                    name="yourmessage_one"
+                    placeholder="Your Message"
+                    class="yourmessage_one" rows="5"
+                  ></textarea>
+                  <button class="flex-row-center-center submit">Submit</button>
+                </div>
+              </div>
+
+
+
+              <div class="column_three">
+                <div class="columngetintouc">
+                  <button class="flex-row-center-center contact_us text-10">
+                    Contact us
+                  </button>
+                  <p class="whatour ui text size-text3xl get-in-touch">GEt in touch</p>
+                  <p class="description-1 ui text size-texts text-wrapper-38">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nulla et varius magna, at facilisis lorem. Aenean cursus
+                    lectus eget diam maximus imperdiet.
+                  </p>
+                </div>
+                <div class="columnview">
+                  <div class="view"></div>
+                  <div class="columnname">
+                    <div class="phone contact__phoneIcon">
+                      <img
+                        src="./img/img_solar_phone_bold.svg"
+                        alt="Solarphone"
+                        class="solarphone_one"
+                      />
+                      <h2 class="class-12323821193 ui heading size-headings">
+                        +1 232-382-1193
+                      </h2>
+                    </div>
+                    <div class="phone contact__emailIcon">
+                      <img
+                        src="./img/img_ic_round_email.svg"
+                        alt="Icroundemail"
+                        class="solarphone_one"
+                      />
+                      <h3 class="email-2 ui heading size-headings">
+                        example@gmail.com
+                      </h3>
+                    </div>
+                    <div class="phone contact__locationIcon">
+                      <img
+                        src="./img/img_typcn_location.svg"
+                        alt="Typcnlocation"
+                        class="solarphone_one"
+                      />
+                      <h4 class="email-2 ui heading size-headings">New york</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="footer">
+          <footer class="footerfooterlog">
+            <div class="columnline_one">
+              <div class="container-xs">
+                <div class="rowfooterlogo">
+                  <div class="columnfooterlog">
+                    <img
+                      src="./img/img_footer_logo.png"
+                      alt="Footerlogo"
+                      class="footerlogo_one"
+                    />
+                    <p class="description-7 ui text size-textmd">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Integer mattis magna a dolor dictum, vel finibus odio
+                      tincidunt. Suspendisse tristique venenatis.
+                    </p>
+                    <div class="socailmedia">
+                      <button class="letsicons_one">
+                        <img src="./img/img_lets_icons_insta.svg" />
+                      </button>
+                      <button class="letsicons_one">
+                        <img src="./img/img_ri_facebook_fill.svg" />
+                      </button>
+                      <button class="pajamastwitter">
+                        <img src="./img/img_pajamas_twitter.svg" />
+                      </button>
+                    </div>
+                  </div>
+                  <div class="columncontact">
+                    <div class="rowcontact">
+                      <div class="rowmenu">
+                        <div class="columnmenu">
+                          <p class="contact-1 ui text size-text2xl">Menu</p>
+                          <ul class="columnhome_one">
+                            <li>
+                              <a href="#">
+                                <p class="estimateyour ui text size-texts">
+                                  Home
+                                </p>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                <p class="estimateyour ui text size-texts">
+                                  About Us
+                                </p>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                <p class="estimateyour ui text size-texts">
+                                  Services
+                                </p>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                <p class="estimateyour ui text size-texts">
+                                  Blogs
+                                </p>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                <p class="estimateyour ui text size-texts">
+                                  Contact Us
+                                </p>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="columncalculato">
+                          <p class="contact-1 ui text size-text2xl">
+                            Calculators
+                          </p>
+                          <ul class="columnhome_one">
+                            <li>
+                              <a href="#">
+                                <p class="mortgage ui text size-texts">
+                                  Mortgage calculator
+                                </p>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                <p class="mortgage ui text size-texts">
+                                  Interest calculator
+                                </p>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                <p class="mortgage ui text size-texts">
+                                  Lorem Calculator
+                                </p>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="contact">
+                        <p class="contact-1 ui text size-text2xl">Contact</p>
+                        <div class="columnphphonefi">
+                          <div class="phone-1">
+                            <img
+                              src="./img/img_ph_phone_fill.svg"
+                              alt="Phphonefill"
+                              class="phphonefill_one"
+                            />
+                            <p class="class-13232345812 ui text size-texts">
+                              +1 323-234-5812
+                            </p>
+                          </div>
+                          <div class="email-3">
+                            <img
+                              src="./img/img_dashicons_email_alt.svg"
+                              alt="Dashiconsemail"
+                              class="phphonefill_one"
+                            />
+                            <p class="email-4 ui text size-texts">
+                              example@gmail.com
+                            </p>
+                          </div>
+                          <div class="phone-1">
+                            <img
+                              src="./img/img_fluent_location_12_filled.svg"
+                              alt="Fluentlocation"
+                              class="phphonefill_one"
+                            />
+                            <p class="loremipsum-3 ui text size-texts">
+                              Lorem ipsum dolor sit amet, consectetur
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="getquote">
+                      <p class="learnmore_one ui text size-text2xl">
+                        Learn more about alternative financing today
+                      </p>
+                      <button class="flex-row-center-center contact_us-1">
+                        CONTACT US
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="line_one"></div>
+              <div class="columncopyright container-xs">
+                <p class="copyright2022 ui text size-textmd">
+                  Copyright © 2022 - 2024
+                </p>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="./js/main.js" />
+
+<script>
+      const NavbarWrapper = document.getElementById("navBar__mainWrapper");
+      const heroSectionWraper = document.getElementById(
+        "heroSection__mainWraper"
+      );
+      const HeroSectionBgWrapper = document.getElementById(
+        "heroSection__BgWrapper"
+      );
+      const heroSectionBTN = document.getElementById("heroSection__BTN");
+      const aboutSvgCircleDark = document.getElementById(
+        "aboutSvg__circleDark"
+      );
+      const aboutSvgCircleLight = document.getElementById(
+        "aboutSvg__circleLight"
+      );
+      const aboutSmallTag = document.getElementById("about__smallTag");
+
+      gsap.registerPlugin(ScrollTrigger);
+      const gsapTL = new gsap.timeline();
+
+      document.addEventListener("DOMContentLoaded", () => {
+        gsapTL.from(HeroSectionBgWrapper, {
+          opacity: 0,
+          duration: 0.9,
+          ease: "power1.out",
+        });
+        gsapTL.from(NavbarWrapper, {
+          y: "-60%",
+          opacity: 0,
+          duration: 0.8,
+          ease: "power1.out",
+        });
+        gsapTL.from(heroSectionWraper, {
+          opacity: 0,
+          duration: 0.6,
+          ease: "power1.out",
+        });
+        gsapTL.from(heroSectionBTN, {
+          opacity: 0,
+          duration: 0.4,
+          ease: "power1.out",
+        });
+      });
+
+      gsap.to(aboutSvgCircleDark, {
+        x: "-10%",
+        duration: 1,
+        ease: "power1.out",
+        repeat: -1,
+        yoyo: true,
+      });
+
+      gsap.to(aboutSvgCircleLight, {
+        x: "-10%",
+        duration: 1,
+        ease: "power1.out",
+        repeat: -1,
+        yoyo: true,
+      });
+
+      gsap.from(".about__smalltag", {
+        scrollTrigger: {
+          trigger: ".about__smalltag",
+          toggleActions: "restart none none none",
+          markers: false,         
+        },
+        opacity: 0,
+        y: "-50%",
+        duration: 0.8,
+        ease: "power1.out",
+      });
+
+      gsap.from(".aboutsection__LockItIn", {
+        scrollTrigger: {
+          trigger: ".aboutsection__LockItIn",
+          // start: "top 90%",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        y: "-50%",
+        duration: 0.8,
+        ease: "power1.out",
+      });
+
+      gsap.from(".aboutSection__Paragraph", {
+        scrollTrigger: {
+          trigger: ".aboutSection__Paragraph",
+          // start: "top 90%",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        y: "20%",
+        duration: 0.8,
+        ease: "power1.out",
+      });
+
+      gsap.from(".aboutSection__LearnMoreBTN", {
+        scrollTrigger: {
+          trigger: ".aboutSection__LearnMoreBTN",
+          // start: "top 90%",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        scale: 0.5,
+        duration: 0.8,
+        ease: "power1.out",
+      });
+      
+      
+      
+      gsap.from(".whatWeDoSec__tag", {
+        scrollTrigger: {
+          trigger: ".whatWeDoSec__tag",
+          // start: "top 90%",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        y: "-40%",
+        duration: 0.8,
+        ease: "power1.out",
+      });
+
+
+
+      gsap.from(".whatWeDoSec__solutionToHeight", {
+        scrollTrigger: {
+          trigger: ".whatWeDoSec__solutionToHeight",
+          // start: "top 90%",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        y: "-40%",
+        duration: 0.8,
+        ease: "power1.out",
+      });
+
+
+
+      gsap.from(".whatWeDoSec__subHeading", {
+        scrollTrigger: {
+          trigger: ".whatWeDoSec__subHeading",
+          // start: "top 90%",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        x: "-20%",
+        duration: 0.8,
+        ease: "power1.out",
+      });
+
+      gsap.from("#calculatorSection__titleWrapper", {
+        scrollTrigger: {
+          trigger: "#calculatorSection__titleWrapper",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        y: "-20%",
+        duration: 0.5,
+        ease: "power1.out",
+      });
+      gsap.from(".calculatorSection__heading", {
+        scrollTrigger: {
+          trigger: ".calculatorSection__heading",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        y: "-20%",
+        duration: 0.5,
+        ease: "power1.out",
+      });
+      gsap.from(".calculatorSection__smallInfo", {
+        scrollTrigger: {
+          trigger: ".calculatorSection__smallInfo",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        scale: 0.3,
+        duration: 0.5,
+        ease: "power1.out",
+      });
+      gsap.from(".calculatorSection__mainWrapper", {
+        scrollTrigger: {
+          trigger: ".calculatorSection__mainWrapper",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        scale: 0.3,
+        duration: 0.5,
+        ease: "power1.out",
+      });
+      gsap.from(".comparison-wrapper", {
+        scrollTrigger: {
+          trigger: ".comparison-wrapper",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        y: "-30%",
+        duration: 0.5,
+        ease: "power1.out",
+      });
+      gsap.from(".versus__heading", {
+        scrollTrigger: {
+          trigger: ".versus__heading",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        y: "-30%",
+        duration: 0.5,
+        ease: "power1.out",
+      });
+      gsap.from(".versus__paragraph", {
+        scrollTrigger: {
+          trigger: ".versus__paragraph",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        scale: 0.3,
+        duration: 0.5,
+        ease: "power1.out",
+      });
+      gsap.from(".blogSec__smallTag", {
+        scrollTrigger: {
+          trigger: ".blogSec__smallTag",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        y: "-30%",
+        duration: 0.5,
+        ease: "power1.out",
+      });
+      gsap.from(".blogSec__heading", {
+        scrollTrigger: {
+          trigger: ".blogSec__heading",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        x: "-50%",
+        duration: 0.5,
+        ease: "power1.out",
+      });
+      gsap.from(".blogSec__blogCard", {
+        scrollTrigger: {
+          trigger: ".blogSec__blogCard",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        scale: 0.3,
+        duration: 0.5,
+        ease: "power1.out",
+      });
+      gsap.from(".banner__heading1", {
+        scrollTrigger: {
+          trigger: ".banner__heading1",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        x: "50%",
+        duration: 0.5,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+      gsap.from(".banner__heading2", {
+        scrollTrigger: {
+          trigger: ".banner__heading2",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        x: "50%",
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.3,
+      });
+      gsap.from(".banner__ContactBTN", {
+        scrollTrigger: {
+          trigger: ".banner__ContactBTN",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        scale: 0.3,
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.3,
+      });
+      gsap.from(".banner__3dHouse", {
+        scrollTrigger: {
+          trigger: ".banner__3dHouse",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        x: "-50%",
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+      gsap.from(".testimonialSection__heading", {
+        scrollTrigger: {
+          trigger: ".testimonialSection__heading",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        y: "-30%",
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+      gsap.from(".testimonialSection__paragraph", {
+        scrollTrigger: {
+          trigger: ".testimonialSection__paragraph",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        y: "-30%",
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+      gsap.from(".testimonialSection__Subheading", {
+        scrollTrigger: {
+          trigger: ".testimonialSection__Subheading",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        x: "-30%",
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+
+      gsap.from(".contact__formWrapper", {
+        scrollTrigger: {
+          trigger: ".contact__formWrapper",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        scale: 0.3,
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+      
+      
+      gsap.from(".get-in-touch", {
+        scrollTrigger: {
+          trigger: ".get-in-touch",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        x: "-30%",
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+      
+      
+      gsap.from(".text-wrapper-38", {
+        scrollTrigger: {
+          trigger: ".text-wrapper-38",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        x: "-30%",
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+      
+      
+      gsap.from(".text-10", {
+        scrollTrigger: {
+          trigger: ".text-10",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        x: "-30%",
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+      
+      
+      gsap.from(".contact__phoneIcon", {
+        scrollTrigger: {
+          trigger: ".contact__phoneIcon",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        scale: 0.3,
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+      gsap.from(".contact__emailIcon", {
+        scrollTrigger: {
+          trigger: ".contact__emailIcon",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        scale: 0.3,
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+      gsap.from(".contact__locationIcon", {
+        scrollTrigger: {
+          trigger: ".contact__locationIcon",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        scale: 0.3,
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+      gsap.from(".text-wrapper-40", {
+        scrollTrigger: {
+          trigger: ".text-wrapper-40",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        x: "50%",
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+      gsap.from(".text-wrapper-41", {
+        scrollTrigger: {
+          trigger: ".text-wrapper-40",
+          toggleActions: "restart none none none",
+          markers: false,
+        },
+        opacity: 0,
+        x: "50%",
+        duration: 0.8,
+        ease: "power1.out",
+        delay: 0.1,
+      });
+    </script>
+
+    </body>
+</html>

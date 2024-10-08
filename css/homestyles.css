@@ -1,0 +1,86 @@
+/*=========== TABLE OF CONTENTS ===========
+1. CSS Variables
+2. Utility CSS
+==========================================*/
+
+/*-------------------------------------
+  1. CSS Variables
+--------------------------------------*/
+:root {
+  /*------Color variables------*/
+  --black_900: #000000;
+  --black_900_26: #00000026;
+  --black_900_3f: #0000003f;
+  --black_900_66: #00000066;
+  --blue_200: #87ceeb;
+  --blue_200_4c: #87ceeb4c;
+  --blue_200_7e: #87ceeb7e;
+  --blue_200_e5: #87ceebe5;
+  --blue_300: #6fc5e8;
+  --blue_900: #004290;
+  --blue_gray_100: #d9d9d9;
+  --blue_gray_900: #2d2d2d;
+  --gray_200: #eeeeee;
+  --gray_900: #202020;
+  --gray_900_7f: #2020207f;
+  --gray_900_ee: #202020ee;
+  --indigo_900: #002d62;
+  --lime_a400: #daeb14;
+  --white_a700: #ffffff;
+  --white_a700_00: #ffffff00;
+  --white_a700_66: #ffffff66;
+  --white_a700_7f: #ffffff7f;
+  --white_a700_99: #ffffff99;
+
+  /*------Shadow variables------*/
+  --shadow-xs: 0 0 4px 2px #00000026;
+  --shadow-sm: 0 0 4px 0 #0000003f;
+
+  /*------Border radius variables------*/
+  --radius-xs: 1px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-3xl: 30px;
+  --radius-4xl: 32px;
+  --radius-5xl: 60px;
+
+  /*------Spacing variables------*/
+  --space-xs: 10px;
+  --space-sm: 12px;
+  --space-md: 14px;
+  --space-lg: 16px;
+  --space-xl: 18px;
+  --space-2xl: 20px;
+  --space-3xl: 24px;
+  --space-4xl: 28px;
+  --space-5xl: 32px;
+  --space-6xl: 36px;
+  --space-7xl: 48px;
+}
+
+/*-------------------------------------
+  2. Utility CSS
+--------------------------------------*/
+.flex-col-center-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-row-center-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-col-end-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
