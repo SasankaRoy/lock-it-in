@@ -51,6 +51,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 95%;
+  margin: 0 auto;
+  
   gap: var(--space-2xl);
   @media only screen and (max-width: 1050px) {
     flex-direction: column;
@@ -1004,7 +1007,9 @@
   margin-top: 22px;
 }
 
+
 .calculator {
+  
   height: 1080px;
   padding-top: 80px;
   padding-bottom: 80px;
@@ -1326,6 +1331,8 @@
 }
 
 .blogs2 {
+  width: 95%;
+  margin: 0 auto;
   padding-top: 74px;
   padding-bottom: 74px;
   background: linear-gradient(180deg, #ffffff, #ffffff00, #ffffff);
@@ -1882,6 +1889,8 @@
 }
 
 .bg-1 {
+  width: 95%;
+  margin: 0 auto;
   padding-top: 178px;
   padding-bottom: 178px;
   background: linear-gradient(
