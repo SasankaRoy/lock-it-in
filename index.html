@@ -499,11 +499,34 @@
             <div class="vs">
               <div class="row_one container-xs">
                 <div class="rowcomparison">
-                  <img
-                    src="./img/img_rectangle_7.png"
-                    alt="Image"
-                    class="image_one"
-                  />
+                  <div class="calculator__leftMainWrapper">
+                    <div class="camparisonSec__mainWrapper">
+                      <div class="traditionalDiv__mainWrapper">
+                        <h3 class="traditional__mainTitle">
+                          TRADITIONAL FINANCING
+                        </h3>
+                        <ul class="traditional__featuresListWrapper">
+                          <li class="traditional__KeyTitle">25% downpayment</li>
+                          <li class="traditional__KeyTitle">
+                            75% mortgage financing at current mortgage rates
+                            that exceed 6%
+                          </li>
+                          <li class="traditional__KeyTitle">
+                            pay 3 - 6% in refinance cost when rates fall
+                          </li>
+                          <li class="traditional__KeyTitle">
+                            Pay high closing costs
+                            <ul class="traditional__SubfeaturesListWrapper">
+                              <li class="traditional__KeyTitle">Bank origination fees</li>
+                              <li class="traditional__KeyTitle">Bank underwriting fees</li>
+                              <li class="traditional__KeyTitle">other (legal,title,insurance,escrow)</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
                   <div class="columncompariso">
                     <button class="flex-row-center-center comparison">
                       Comparison
@@ -678,7 +701,7 @@
                 <img src="./img/img_bxs_down_arrow_blue_200.svg" />
               </button>
             </div>
-            <div id="slider" class="slider swiper">
+            <!-- <div id="slider" class="slider swiper">
               <div class="swiper-wrapper">
                 <div class="dhi-group swiper-slide">
                   <div class="card1">
@@ -775,7 +798,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
 
@@ -1328,7 +1351,7 @@
       <div id="mainWrapper__contactInfoModel" class="mainWrapper__BuyersModel">
         <div class="mainForm__topMainWrapper">
           <button class="formQuize__fakeBTN">Quiz Form</button>
-          <button onclick="showSellersModel('hide')" class="mode__CloseBtn">
+          <button onclick="hideGetInTouchHandler()" class="mode__CloseBtn">
             Cancel
             <span>
               <svg

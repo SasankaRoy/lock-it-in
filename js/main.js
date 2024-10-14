@@ -61,6 +61,16 @@ const getInTouchHandler = (currentVeiwModel) => {
   console.log("getInTouchHandler");
 };
 
+const hideGetInTouchHandler = (currentVeiwModel)=>{
+  // if (currentVeiwModel === "buyer") {
+  //   mainWrapper__BuyersModel.style.display = "none";
+  // } else if (currentVeiwModel === "seller") {
+  //   mainWrapper__SellersModel.style.display = "none";
+  // }
+  mainWrapper__contactInfoModel.style.display = "none";
+  mainMode__Wrapper.style.display = "flex";
+}
+
 gsap.registerPlugin(ScrollTrigger);
 const gsapTL = new gsap.timeline();
 
