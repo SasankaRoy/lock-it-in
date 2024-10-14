@@ -9,11 +9,16 @@ const aboutSmallTag = document.getElementById("about__smallTag");
 const popUpModel__mainOuterWrapper = document.getElementById(
   "popUpModel__mainOuterWrapper"
 );
-const mainMode__Wrapper = document.getElementById('mainMode__Wrapper')
-const mainWrapper__BuyersModel = document.getElementById('mainWrapper__BuyersModel');
-const mainWrapper__SellersModel = document.getElementById('mainWrapper__SellersModel');
-
-
+const mainMode__Wrapper = document.getElementById("mainMode__Wrapper");
+const mainWrapper__BuyersModel = document.getElementById(
+  "mainWrapper__BuyersModel"
+);
+const mainWrapper__SellersModel = document.getElementById(
+  "mainWrapper__SellersModel"
+);
+const mainWrapper__contactInfoModel = document.getElementById(
+  "mainWrapper__contactInfoModel"
+);
 
 const handleShowPopUp = (hideAndShow) => {
   if (hideAndShow === "show") {
@@ -24,26 +29,36 @@ const handleShowPopUp = (hideAndShow) => {
 };
 
 const showBuyersModel = (hideAndShow) => {
-  if (hideAndShow === 'show') {
+  if (hideAndShow === "show") {
     mainWrapper__BuyersModel.style.display = "flex";
     mainMode__Wrapper.style.display = "none";
-    return
+    return;
   }
 
   mainWrapper__BuyersModel.style.display = "none";
-    mainMode__Wrapper.style.display = "flex";
-  console.log("buyers model",hideAndShow);
+  mainMode__Wrapper.style.display = "flex";
+  console.log("buyers model", hideAndShow);
 };
 const showSellersModel = (hideAndShow) => {
-  if (hideAndShow === 'show') {
+  if (hideAndShow === "show") {
     mainWrapper__SellersModel.style.display = "flex";
     mainMode__Wrapper.style.display = "none";
-    return
+    return;
   }
 
+  mainWrapper__SellersModel.style.display = "none";
+  mainMode__Wrapper.style.display = "flex";
+  console.log("buyers model", hideAndShow);
+};
+
+const getInTouchHandler = (currentVeiwModel) => {
+  if (currentVeiwModel === "buyer") {
+    mainWrapper__BuyersModel.style.display = "none";
+  } else if (currentVeiwModel === "seller") {
     mainWrapper__SellersModel.style.display = "none";
-    mainMode__Wrapper.style.display = "flex";
-  console.log("buyers model",hideAndShow);
+  }
+  mainWrapper__contactInfoModel.style.display = "flex";
+  console.log("getInTouchHandler");
 };
 
 gsap.registerPlugin(ScrollTrigger);

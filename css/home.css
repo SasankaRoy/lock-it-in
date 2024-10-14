@@ -7,9 +7,6 @@
   1. Common CSS
 --------------------------------------*/
 
-
-
-
 .aboutus-link {
   cursor: pointer;
 }
@@ -23,7 +20,7 @@
 }
 
 .calculateyour {
-  font-family: 'League Gothic' !important;
+  font-family: "League Gothic" !important;
   text-transform: uppercase;
   @media only screen and (max-width: 1440px) {
     font-size: 48px;
@@ -350,7 +347,7 @@
 }
 
 .contact-1 {
-  font-family: 'League Gothic' !important;
+  font-family: "League Gothic" !important;
   text-transform: uppercase;
   @media only screen and (max-width: 1050px) {
     font-size: 32px;
@@ -388,7 +385,7 @@
   color: var(--indigo_900);
   padding-left: 34px;
   padding-right: 34px;
-  font-family: 'League Gothic';
+  font-family: "League Gothic";
   text-transform: uppercase;
   font-size: 24px;
   background-color: var(--blue_200);
@@ -425,7 +422,7 @@
     padding-bottom: var(--space-lg);
   }
 }
-.heroSec__bg{
+.heroSec__bg {
   position: absolute;
   top: 0;
   right: 0;
@@ -436,7 +433,7 @@
 .rowheaderlogo {
   padding-left: var(--space-5xl);
   padding-right: var(--space-5xl);
-  position: relative; 
+  position: relative;
   /* overflow-x: hidden; */
   @media only screen and (max-width: 550px) {
     padding-left: var(--space-lg);
@@ -444,7 +441,7 @@
   }
 }
 
-.hero__mainWrapper{
+.hero__mainWrapper {
   position: relative;
   background-color: red;
   overflow: hidden;
@@ -453,7 +450,13 @@
 .column {
   padding-top: 66px;
   padding-bottom: 66px;
-  background: linear-gradient(180deg, #00000066, #00000066, #00000066, #00000066);
+  background: linear-gradient(
+    180deg,
+    #00000066,
+    #00000066,
+    #00000066,
+    #00000066
+  );
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -480,7 +483,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  position:relative;
+  position: relative;
   z-index: 10;
   @media only screen and (max-width: 1440px) {
     gap: 102px;
@@ -534,7 +537,7 @@
   color: var(--indigo_900);
   padding-left: 34px;
   padding-right: 34px;
-  font-family: 'League Gothic';
+  font-family: "League Gothic";
   text-transform: uppercase;
   font-size: 24px;
   background-color: var(--blue_200);
@@ -596,7 +599,7 @@
 
 .finance {
   color: var(--blue_200) !important;
-  font-family: 'League Gothic' !important;
+  font-family: "League Gothic" !important;
   text-transform: uppercase;
   margin-left: auto;
   margin-right: auto;
@@ -626,7 +629,7 @@
   color: var(--white_a700);
   padding-left: 34px;
   padding-right: 34px;
-  font-family: 'League Gothic';
+  font-family: "League Gothic";
   text-transform: uppercase;
   font-size: 32px;
   background: linear-gradient(180deg, #004290, #6fc5e8);
@@ -674,7 +677,7 @@
   background-color: var(--white_a700);
 }
 
-.aboutSec__mainContentWrapper{
+.aboutSec__mainContentWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -682,7 +685,7 @@
 }
 
 .bg-2 {
-  height: 1198px;  
+  height: 1198px;
   background-image: url("../img/blue-wave-3x-1.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -742,15 +745,15 @@
     gap: 30px;
   }
 }
-.about__graphicSectionWrapper{
+.about__graphicSectionWrapper {
   width: 50%;
   position: relative;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.aboutSection__videoWrapper{
+.aboutSection__videoWrapper {
   width: 600px;
   height: 600px;
   position: relative;
@@ -758,16 +761,16 @@
   z-index: 50;
   border-radius: 999999px;
 }
-.aboutSection__videoWrapper video{
+.aboutSection__videoWrapper video {
   position: absolute;
   width: 110%;
   height: 110%;
   object-fit: cover;
   zoom: 1;
   bottom: -2.5%;
-  right:-2%;
+  right: -2%;
 }
-.aboutus__videoBg{
+.aboutus__videoBg {
   position: absolute;
 }
 
@@ -823,7 +826,7 @@
 
 .lockitin3xthree {
   color: var(--black_900) !important;
-  font-family: 'League Gothic' !important;
+  font-family: "League Gothic" !important;
   text-transform: uppercase;
   width: 100%;
   line-height: normal;
@@ -872,13 +875,13 @@
 
 .getfreequote {
   color: var(--indigo_900) !important;
-  font-family: 'League Gothic' !important;
+  font-family: "League Gothic" !important;
   text-transform: uppercase;
 }
 
 .learnmore {
   color: var(--blue_200) !important;
-  font-family: 'League Gothic' !important;
+  font-family: "League Gothic" !important;
   text-transform: uppercase;
 }
 
@@ -938,13 +941,13 @@
   width: 50%;
 }
 
-.whatWeOffer__mainWrapper{
+.whatWeOffer__mainWrapper {
   gap: var(--space-4xl);
   display: flex;
   align-self: center;
   align-items: center;
 }
-.whatWeOffer__grahicsWrapper{
+.whatWeOffer__grahicsWrapper {
   width: 50%;
 }
 .what_we_offer {
@@ -970,7 +973,7 @@
 
 .solutionto {
   color: var(--black_900) !important;
-  font-family: 'League Gothic' !important;
+  font-family: "League Gothic" !important;
   text-transform: uppercase;
   /* width: 48%; */
   line-height: 76px;
@@ -1372,7 +1375,14 @@
 .bg {
   padding-top: 198px;
   padding-bottom: 198px;
-  background: linear-gradient(180deg, #ffffff, #ffffff, #ffffff00, #ffffff, #ffffff);
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #ffffff,
+    #ffffff00,
+    #ffffff,
+    #ffffff
+  );
   @media only screen and (max-width: 1440px) {
     padding-top: var(--space-5xl);
     padding-bottom: var(--space-5xl);
@@ -1424,7 +1434,7 @@
 .rowmortgage3d {
   height: 594px;
   margin-bottom: 6px;
-  background-image: url('../img/img_group_291.png');
+  background-image: url("../img/img_group_291.png");
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -1496,12 +1506,19 @@
   padding-top: 210px;
   padding-bottom: 210px;
   overflow: auto;
-  background: linear-gradient(180deg, #ffffff, #ffffff, #ffffff00, #ffffff, #ffffff);
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #ffffff,
+    #ffffff00,
+    #ffffff,
+    #ffffff
+  );
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   @media only screen and (max-width: 1440px) {
     height: auto;
     padding-top: var(--space-5xl);
@@ -1529,7 +1546,7 @@
   flex: 1;
   flex-direction: column;
   align-items: start;
- 
+
   @media only screen and (max-width: 1440px) {
     margin-left: 0px;
     margin-right: 0px;
@@ -1561,8 +1578,8 @@
     padding-right: var(--space-lg);
   }
 }
-.testimonialSlider__mainWrapper{
- flex: 1;
+.testimonialSlider__mainWrapper {
+  flex: 1;
 
   overflow: hidden;
 }
@@ -1827,7 +1844,14 @@
 .bg-1 {
   padding-top: 178px;
   padding-bottom: 178px;
-  background: linear-gradient(180deg, #ffffff, #ffffff, #ffffff00, #ffffff, #ffffff);
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #ffffff,
+    #ffffff00,
+    #ffffff,
+    #ffffff
+  );
   display: flex;
   justify-content: center;
   @media only screen and (max-width: 1440px) {
@@ -1901,7 +1925,7 @@
   margin-top: 32px;
   font-size: 20px;
   background-color: var(--white_a700_66);
- width: 100%;
+  width: 100%;
   padding: var(--space-xl) var(--space-3xl) var(--space-sm) var(--space-3xl);
   border-radius: var(--radius-md);
   @media only screen and (max-width: 550px) {
@@ -2008,7 +2032,7 @@
   height: 866px;
   margin-top: 22px;
   background-color: var(--white_a700);
-  background-image: url('../img/img_footer.png');
+  background-image: url("../img/img_footer.png");
   background-size: cover;
   background-repeat: no-repeat;
   padding: var(--space-7xl);
@@ -2260,3 +2284,287 @@
   font-family: Poppins !important;
   font-weight: 300 !important;
 }
+
+/* popUp model start */
+
+.popUpModel__mainOuterWrapper {
+  background: rgba(0, 0, 0, 0.4) transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  z-index: 80;
+  display: none;
+  transition: display 0.6s linear;
+}
+
+.mainMode__Wrapper {
+  width: 70%;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px 20px;
+  background-image: url("../img/FormBG1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainForm__topMainWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.formQuize__fakeBTN {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 0.9vw;
+  font-weight: 500;
+  font-family: "Montserrat";
+  background: linear-gradient(180deg, #004291 0%, #6fc6e9 100%);
+  color: white;
+  pointer-events: none;
+}
+.mode__CloseBtn {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 0.9vw;
+  font-weight: 600;
+  font-family: "Montserrat";
+  background: #e92828;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.form__mainHeading {
+  font-size: 3.5vw;
+  font-weight: 400;
+  font-family: "League Gothic", Helvetica;
+  margin: 20px 0px;
+  text-transform: uppercase;
+}
+
+.cards__mainWrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  margin: 30px 0px;
+}
+
+.mainCard1__wrapper {
+  box-shadow: 0px 0px 4px 2px #00000026;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 20px 30px;
+  background-color: white;
+}
+.mainCard1__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.mainImage__wrapper {
+  width: 300px;
+  height: 300px;
+}
+.mainImage__wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.Buyer__BTN {
+  border: 2px solid #004291;
+  outline: none;
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-size: 1.4vw;
+  font-weight: 700;
+  font-family: "Montserrat";
+  background: transparent;
+  color: #004291;
+  cursor: pointer;
+}
+
+.mainWrapper__BuyersModel {
+  width: 70%;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px 20px;
+  background-image: url("../img/FormBG1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  display: none;
+  flex-direction: column;
+}
+
+.question__buyerMainWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.questionCard__mainWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0px 0px 2px 1px #00000026;
+  border-radius: 10px;
+}
+.questionText__wrapper {
+  width: 70%;
+}
+.question__heading {
+  font-size: 1.5vw;
+  font-weight: 600;
+  font-family: "Montserrat";
+  margin-bottom: 10px;
+}
+
+.answer__Wrapper {
+  width: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.answer__Wrapper select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1vw;
+  font-weight: 600;
+  font-family: "Montserrat";
+  color: rgba(0, 0, 0, 0.7);
+}
+.questionText__wrapper p {
+  font-size: 1.2vw;
+  font-weight: 400;
+  font-family: "Montserrat";
+  margin: 15px 0;
+}
+
+.answer__yesBTNWrapper {
+  background: #15bc06;
+  color: white;
+  font-size: 1.1vw;
+  font-weight: 600;
+  font-family: "Montserrat";
+  padding: 10px 30px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.answer__noBTNWrapper {
+  background: #de1212;
+  color: white;
+  font-size: 1.1vw;
+  font-weight: 600;
+  font-family: "Montserrat";
+  padding: 10px 30px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.continue__BTN {
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: "League Gothic";
+  font-weight: 400;
+  font-size: 2.2vw;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #004291 0%, #6fc6e9 100%);
+  color: white;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.formDiv__mainWrapper {
+  margin: 40px 0;
+}
+
+.form__innerWrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+.firstInputs__Wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+.input__Wrapper {
+  width: 50%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.input__Wrapper input {
+  width: 100%;
+  background: rgba(90, 89, 89, 0.1);
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+.form__textareaWrapper {
+  width: 100%;
+}
+.form__textareaWrapper textarea {
+  width: 100%;
+  background: rgba(90, 89, 89, 0.1);
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+.submit__Wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.submit__BTN {
+  width: 70%;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: "League Gothic";
+  font-weight: 400;
+  font-size: 2.2vw;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #004291 0%, #6fc6e9 100%);
+  color: white;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+/* popUp model end */
