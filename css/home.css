@@ -6,6 +6,10 @@
 /*-------------------------------------
   1. Common CSS
 --------------------------------------*/
+
+
+
+
 .aboutus-link {
   cursor: pointer;
 }
@@ -565,6 +569,7 @@
 
 .lockitinllc {
   color: var(--blue_200) !important;
+  font-weight: 700 !important;
   @media only screen and (max-width: 1050px) {
     font-size: 30px;
   }
@@ -578,7 +583,7 @@
   height: 166px;
   margin-top: -12px;
   position: relative;
-  width: 44%;
+  width: 80%;
   align-content: center;
   @media only screen and (max-width: 1440px) {
     height: auto;
@@ -595,6 +600,7 @@
   text-transform: uppercase;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
   @media only screen and (max-width: 1440px) {
     font-size: 48px;
   }
@@ -820,7 +826,7 @@
   font-family: 'League Gothic' !important;
   text-transform: uppercase;
   width: 100%;
-  line-height: 76px;
+  line-height: normal;
   @media only screen and (max-width: 1440px) {
     font-size: 48px;
   }
