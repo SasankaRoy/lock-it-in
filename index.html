@@ -28,86 +28,214 @@
       src="https://cdn.jsdelivr.net/npm/swiper@11.0.6/swiper-bundle.min.js"
       defer
     ></script>
-    <script>
-      async function handleSlider() {
-        const slider = document.querySelector("#slider");
-
-        // Wait for all content to load before setting maxWidth
-        const imageList = slider.querySelectorAll("img");
-        const onLoadPromiseList = [];
-        for (const image of imageList) {
-          if (image.complete) continue;
-
-          const onLoadPromise = new Promise((resolve, reject) => {
-            if (image.complete) return resolve();
-            image.onload = resolve;
-            image.onerror = resolve;
-          });
-          onLoadPromiseList.push(onLoadPromise);
-        }
-        await Promise.all(onLoadPromiseList);
-
-        // Set max width and height to prevent slider from overflowing
-        slider.style.maxWidth = getComputedStyle(slider).width;
-        slider.style.maxHeight = getComputedStyle(slider).height;
-
-        const sliderParent = slider.parentElement;
-        const sliderTrack = document.querySelector("#slider > .swiper-wrapper");
-        const slides = document.querySelectorAll(
-          "#slider > .swiper-wrapper > .swiper-slide"
-        );
-
-        // Clone slides for infinite loop
-        const slidesToShow = 1;
-        const slidesRequired = 2;
-        for (
-          let i = 0;
-          slides.length <= slidesToShow && i <= slidesRequired - 1;
-          i++
-        ) {
-          const index = i % slidesToShow;
-          const clone = slides[index]?.cloneNode(true);
-          clone?.setAttribute("cloned", "");
-          sliderTrack?.appendChild(clone);
-        }
-
-        const swiper = new Swiper("#slider", {
-          grabCursor: true,
-          loop: true,
-          slidesOffsetAfter: -148,
-          slidesOffsetBefore: -724,
-          slidesPerView: 1,
-          navigation: {
-            prevEl: "#slider-control-prev",
-            nextEl: "#slider-control-next",
-          },
-          effect: "coverflow",
-          coverflowEffect: {
-            rotate: 0,
-            depth: 0,
-            modifier: 1,
-            slideShadows: false,
-          },
-          breakpoints: {
-            0: { slidesPerView: 1 },
-            551: { slidesPerView: 1 },
-            1051: { slidesPerView: 1 },
-            1441: { slidesPerView: 1 },
-          },
-        });
+    
+   
+    <style>
+      .text-center{
+        text-align: center;
       }
 
-      /**
-       * Hydrate slider #slider
-       */
-      document.addEventListener("DOMContentLoaded", async () => {
-        try {
-          await handleSlider();
-        } catch (error) {
-          console.error(error);
-        }
-      });
-    </script>
+  .calc {
+  font-family: Arial, sans-serif;
+  text-rendering: geometricPrecision;
+  width: 100%;
+  background-image: linear-gradient(to right top, #002d62, #1c5286, #3b7aa8, #5fa3ca, #87ceeb);
+  margin: 15px auto 0 auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 40px rgba(0,0,0,0.2),
+    inset 0 3px 0 rgba(255,255,255,0.2);
+  padding: 20px
+}
+
+.display {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: rgba(255,255,255,0.8);
+  background: rgba(0,0,0,.6);
+  font-size: 20px;
+  padding: 10px;
+  text-align: right;
+  border-radius: 2px;
+  box-shadow: inset 0 5px 8px rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.3);
+}
+
+.header .titles {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(0,0,0,0.45);
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: -8px;
+  padding-bottom: 8px;
+  text-align: right;
+  text-shadow: 0 1px 1px rgba(255,255,255,0.15);
+  user-select: none;
+}
+
+.display-main {
+  height: 38px;
+}
+
+.display-indicate {
+  font-size: 10px;
+  color: rgba(255,255,255,0.05);
+  text-align: left;
+  margin: -5px 0 -2px -5px;
+  text-transform: uppercase;
+  user-select: none;
+  transition: color .1s ease-in;
+}
+.max{
+  color: rgba(255,150,150,0.8);
+}
+
+.display-operations {
+  font-size: 15px;
+  color: rgba(255,255,255,0.5);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 3px;
+  margin-top: 4px;
+}
+
+
+
+.left, .right {
+  float: left;
+}
+
+.button {
+  position: relative;
+  top:0;
+  height: 41px;
+  color: rgba(0,0,0,0.6);
+  font-size: 16px;
+  font-family:"Arial Bold", Gadget, Arial, sans-serif;
+  font-weight: 700;
+  text-align: center;
+  padding: 9px 0 11px 0;
+  border-radius: 2px;
+  float: left;
+  width: 56px;
+  background: rgba(255,255,255,0.8);
+  margin-left: 12px;
+  text-transform: uppercase;
+  border: 0;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.2),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+  transition: all .1s;
+  cursor:pointer;
+  user-select: none;
+}
+
+.button:hover {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15),inset 0 1px 0 rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.95);
+  color: rgba(0,0,0,0.8);
+}
+.button:active {
+  top:1px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.15),inset 0 1px 0 rgba(255,255,255,0.3);
+}
+.button:focus {
+  outline:0;
+}
+
+.ac, .ce {
+  background: #FF8A80
+}
+
+.ac:hover, .ce:hover {
+  background: #FF5252;
+}
+
+.minus {
+  padding-top: 11px;
+  padding-bottom: 9px;
+}
+
+.zero {
+  width: 124px;
+}
+
+.eq{
+  margin-top: 10px;
+  padding: 35px 0 15px 0;
+}
+
+.mult {
+  text-transform: none;
+  padding-top: 9px;
+  padding-bottom: 11px;
+}
+
+/* tips */
+
+.tips {
+  width: 300px;
+  margin: 70px auto;
+}
+
+.tips .title {
+  font-size: 20px;
+  color: rgba(0,0,0,0.6);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tips .hint {
+  margin-bottom: 20px;
+  color: rgba(0,0,0,0.8);
+}
+
+.hint.small {
+  text-align: center;
+  font-size: 14px;
+  margin-top: -12px;
+  margin-bottom: 30px;
+  color: rgba(0,0,0,0.5);
+}
+
+.hint-sel {
+  background: rgba(175,50,50,0.8);
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(250,250,250,0.9);
+  padding: 3px 5px;
+  border-radius: 2px;
+  margin: 0 3px;
+}
+
+.hint-btn {
+  background: rgba(30,30,30,0.6);
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(250,250,250,0.9);
+  padding: 3px 5px;
+  border-radius: 2px;
+  margin: 0 3px;
+}
+
+#downpayment{
+    display: none;
+    background: #FFF;
+    padding: 12px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+#emi{
+  display: none;
+  background: green;
+  padding: 12px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+#traditional_emi{
+  display: none;
+  background: #718319;
+  padding: 12px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+    </style>
   </head>
   <body>
     <div class="home">
@@ -466,27 +594,31 @@
                           </div>
                         </div>
                       </div>
-                      <div class="finalscreen">
-                        <p class="yourmonthly ui text size-textmd">
-                          Your Monthly payment will be
-                        </p>
-                        <h4 class="ui heading size-headingxl">$1,640</h4>
-                        <p class="yourtotal ui text size-textmd">
-                          Your Total payment will be
-                        </p>
-                        <h5 class="ui heading size-headingxl">$1,040,000</h5>
-                        <div class="rowrate">
-                          <div class="rate">
-                            <p class="emilycarter ui text size-texts">Rate</p>
-                            <h6 class="ui heading size-headingmd">3.00%</h6>
-                          </div>
-                          <div class="rate">
-                            <p class="emilycarter ui text size-texts">APR</p>
-                            <h2 class="ui heading size-headingmd">3.54%</h2>
-                          </div>
-                          <button class="flex-row-center-center learn_more-2">
-                            Learn more
-                          </button>
+                        <div class="finalscreen">
+                           <h4 class="text-center">MORTGAGE CALCULATOR</h4>
+ 
+                           <div class="calc">
+                            <div class="header">
+                                <div class="titles">
+                                    Mortgage Calculator
+                                </div>
+                            </div>
+                            <div class="display">
+                                <div class="display-indicate">
+                                    max
+                                </div>
+                                <input type="text" id="propertyValue" class="display-main" placeholder="Enter property value">
+                            </div><br>
+                            <div class="display">
+                                <input type="text" id="downPaymentPercent" class="display-main" placeholder="Enter Payment / Down Payment (%)">
+                            </div>
+                            <p style="margin-top: 15px;color:#FFF" id="downpayment"></p>
+                            <p style="margin-top: 10px;color:#FFF" id="emi"></p>
+                            <p style="margin-top: 10px;color:#FFF" id="traditional_emi"></p>
+                            <p style="margin-top: 10px;color:#FFF" id="monthlysave"></p>
+                            <p style="margin-top: 10px;color:#FFF" id="totalsave"></p>
+                           </div>
+
                         </div>
                       </div>
                     </div>
@@ -1065,7 +1197,7 @@
           </button>
         </div>
 
-        <h3 class="form__mainHeading">Are you a Buyer or Seller? </h3>
+        <h3 class="form__mainHeading">Are you a Buyer or Seller? </h3>
 
         <div class="cards__mainWrapper">
           <div class="mainCard1__wrapper">
@@ -1406,465 +1538,81 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="./js/main.js" />
-
+    <script src="js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-      const NavbarWrapper = document.getElementById("navBar__mainWrapper");
-      const heroSectionWraper = document.getElementById(
-        "heroSection__mainWraper"
-      );
-      const HeroSectionBgWrapper = document.getElementById(
-        "heroSection__BgWrapper"
-      );
-      const heroSectionBTN = document.getElementById("heroSection__BTN");
-      const aboutSvgCircleDark = document.getElementById(
-        "aboutSvg__circleDark"
-      );
-      const aboutSvgCircleLight = document.getElementById(
-        "aboutSvg__circleLight"
-      );
-      const aboutSmallTag = document.getElementById("about__smallTag");
 
-      gsap.registerPlugin(ScrollTrigger);
-      const gsapTL = new gsap.timeline();
+        function allowOnlyNumbers(input) {
+            input.value = input.value.replace(/[^0-9.]/g, '');  // Replace any non-numeric and non-decimal characters
+        }
 
-      document.addEventListener("DOMContentLoaded", () => {
-        gsapTL.from(HeroSectionBgWrapper, {
-          opacity: 0,
-          duration: 0.9,
-          ease: "power1.out",
+      // Function to calculate and display down payment
+      function calculateDownPayment() {
+                var propertyValue = parseFloat($('#propertyValue').val());
+                var downPaymentPercent = parseFloat($('#downPaymentPercent').val());
+
+                // Check if both inputs are valid numbers
+                if (!isNaN(propertyValue) && !isNaN(downPaymentPercent)) {
+                    var downPaymentAmount = (propertyValue * (downPaymentPercent / 100)).toFixed(2);
+                    var remainingAmount = propertyValue - downPaymentAmount;
+
+                    // Loan Parameters
+                    var annualInterestRate = 3; // 3% annual interest rate
+                    var loanTermYears = 30; // Loan term in years (360 months)
+                    
+                    // Monthly interest rate
+                    var monthlyInterestRate = (annualInterestRate / 100) / 12;
+                    var totalMonths = loanTermYears * 12;
+
+                    // EMI calculation using the formula
+                    var emi = (remainingAmount * monthlyInterestRate * Math.pow((1 + monthlyInterestRate), totalMonths)) / 
+                              (Math.pow((1 + monthlyInterestRate), totalMonths) - 1);
+
+                    emi = emi.toFixed(2); // Round to 2 decimal places
+
+                    //traditional EMI
+                    var yearlyRate = 6.457;
+                    var loanyear = 30;
+                    var monthRate = (yearlyRate / 100) / 12;
+                    var totmonth = loanyear * 12;
+                    var traditionalEmi = (remainingAmount * monthRate * Math.pow((1 + monthRate), totmonth)) / 
+                    (Math.pow((1 + monthRate), totmonth) - 1);
+                    traditionalEmi = traditionalEmi.toFixed(2);
+                    
+                    monthlySave = traditionalEmi - emi;
+                    monthlySave = monthlySave.toFixed(2);
+
+                    var totalsave = monthlySave * 360;
+                    totalsave = totalsave.toFixed(2);
+                    $('#emi').show();
+                    $('#emi').text('Lock It In! Monthly EMI: $' + emi);
+                    $('#downpayment').show();
+                    $('#downpayment').text('Down Payment: $' + downPaymentAmount).css('color','#002d62');
+                    $('#traditional_emi').show();
+                    $('#traditional_emi').text('Conventional Financing EMI: $' + traditionalEmi);
+                    $('#monthlysave').text('Monthly savings: $' + monthlySave);
+                    $("#totalsave").text('Aggregate Lock It In Savings for 30 Yrs: $' + totalsave);
+
+                } else {
+
+                  $('#downpayment').show();
+                  $('#downpayment').text('Required both input fields').css('color','#c93434');
+                  $('#emi').hide();
+                  $('#emi').text('');
+                  $('#traditional_emi').hide();
+                  $('#traditional_emi').text('');
+                  $('#monthlysave').text('');
+                  $("#totalsave").text('');
+                }
+            }
+
+            // Trigger calculation on input
+            //$('#propertyValue, #downPaymentPercent').on('input', calculateDownPayment);
+            //$('#propertyValue, #downPaymentPercent').on('input', allowOnlyNumbers(this));
+            $('#propertyValue, #downPaymentPercent').on('input', function() {
+            allowOnlyNumbers(this);  // Validate number input
+            calculateDownPayment();          // Calculate EMI when input changes
         });
-        gsapTL.from(NavbarWrapper, {
-          y: "-60%",
-          opacity: 0,
-          duration: 0.8,
-          ease: "power1.out",
-        });
-        gsapTL.from(heroSectionWraper, {
-          opacity: 0,
-          duration: 0.6,
-          ease: "power1.out",
-        });
-        gsapTL.from(heroSectionBTN, {
-          opacity: 0,
-          duration: 0.4,
-          ease: "power1.out",
-        });
-      });
-
-      gsap.to(aboutSvgCircleDark, {
-        x: "-10%",
-        duration: 1,
-        ease: "power1.out",
-        repeat: -1,
-        yoyo: true,
-      });
-
-      gsap.to(aboutSvgCircleLight, {
-        x: "-10%",
-        duration: 1,
-        ease: "power1.out",
-        repeat: -1,
-        yoyo: true,
-      });
-
-      gsap.from(".about__smalltag", {
-        scrollTrigger: {
-          trigger: ".about__smalltag",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        y: "-50%",
-        duration: 0.8,
-        ease: "power1.out",
-      });
-
-      gsap.from(".aboutsection__LockItIn", {
-        scrollTrigger: {
-          trigger: ".aboutsection__LockItIn",
-          // start: "top 90%",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        y: "-50%",
-        duration: 0.8,
-        ease: "power1.out",
-      });
-
-      gsap.from(".aboutSection__Paragraph", {
-        scrollTrigger: {
-          trigger: ".aboutSection__Paragraph",
-          // start: "top 90%",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        y: "20%",
-        duration: 0.8,
-        ease: "power1.out",
-      });
-
-      gsap.from(".aboutSection__LearnMoreBTN", {
-        scrollTrigger: {
-          trigger: ".aboutSection__LearnMoreBTN",
-          // start: "top 90%",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        scale: 0.5,
-        duration: 0.8,
-        ease: "power1.out",
-      });
-
-      gsap.from(".whatWeDoSec__tag", {
-        scrollTrigger: {
-          trigger: ".whatWeDoSec__tag",
-          // start: "top 90%",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        y: "-40%",
-        duration: 0.8,
-        ease: "power1.out",
-      });
-
-      gsap.from(".whatWeDoSec__solutionToHeight", {
-        scrollTrigger: {
-          trigger: ".whatWeDoSec__solutionToHeight",
-          // start: "top 90%",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        y: "-40%",
-        duration: 0.8,
-        ease: "power1.out",
-      });
-
-      gsap.from(".whatWeDoSec__subHeading", {
-        scrollTrigger: {
-          trigger: ".whatWeDoSec__subHeading",
-          // start: "top 90%",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        x: "-20%",
-        duration: 0.8,
-        ease: "power1.out",
-      });
-
-      gsap.from("#calculatorSection__titleWrapper", {
-        scrollTrigger: {
-          trigger: "#calculatorSection__titleWrapper",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        y: "-20%",
-        duration: 0.5,
-        ease: "power1.out",
-      });
-      gsap.from(".calculatorSection__heading", {
-        scrollTrigger: {
-          trigger: ".calculatorSection__heading",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        y: "-20%",
-        duration: 0.5,
-        ease: "power1.out",
-      });
-      gsap.from(".calculatorSection__smallInfo", {
-        scrollTrigger: {
-          trigger: ".calculatorSection__smallInfo",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        scale: 0.3,
-        duration: 0.5,
-        ease: "power1.out",
-      });
-      gsap.from(".calculatorSection__mainWrapper", {
-        scrollTrigger: {
-          trigger: ".calculatorSection__mainWrapper",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        scale: 0.3,
-        duration: 0.5,
-        ease: "power1.out",
-      });
-      gsap.from(".comparison-wrapper", {
-        scrollTrigger: {
-          trigger: ".comparison-wrapper",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        y: "-30%",
-        duration: 0.5,
-        ease: "power1.out",
-      });
-      gsap.from(".versus__heading", {
-        scrollTrigger: {
-          trigger: ".versus__heading",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        y: "-30%",
-        duration: 0.5,
-        ease: "power1.out",
-      });
-      gsap.from(".versus__paragraph", {
-        scrollTrigger: {
-          trigger: ".versus__paragraph",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        scale: 0.3,
-        duration: 0.5,
-        ease: "power1.out",
-      });
-      gsap.from(".blogSec__smallTag", {
-        scrollTrigger: {
-          trigger: ".blogSec__smallTag",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        y: "-30%",
-        duration: 0.5,
-        ease: "power1.out",
-      });
-      gsap.from(".blogSec__heading", {
-        scrollTrigger: {
-          trigger: ".blogSec__heading",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        x: "-50%",
-        duration: 0.5,
-        ease: "power1.out",
-      });
-      gsap.from(".blogSec__blogCard", {
-        scrollTrigger: {
-          trigger: ".blogSec__blogCard",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        scale: 0.3,
-        duration: 0.5,
-        ease: "power1.out",
-      });
-      gsap.from(".banner__heading1", {
-        scrollTrigger: {
-          trigger: ".banner__heading1",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        x: "50%",
-        duration: 0.5,
-        ease: "power1.out",
-        delay: 0.1,
-      });
-      gsap.from(".banner__heading2", {
-        scrollTrigger: {
-          trigger: ".banner__heading2",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        x: "50%",
-        duration: 0.8,
-        ease: "power1.out",
-        delay: 0.3,
-      });
-      gsap.from(".banner__ContactBTN", {
-        scrollTrigger: {
-          trigger: ".banner__ContactBTN",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        scale: 0.3,
-        duration: 0.8,
-        ease: "power1.out",
-        delay: 0.3,
-      });
-      gsap.from(".banner__3dHouse", {
-        scrollTrigger: {
-          trigger: ".banner__3dHouse",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        x: "-50%",
-        duration: 0.8,
-        ease: "power1.out",
-        delay: 0.1,
-      });
-      gsap.from(".testimonialSection__heading", {
-        scrollTrigger: {
-          trigger: ".testimonialSection__heading",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        y: "-30%",
-        duration: 0.8,
-        ease: "power1.out",
-        delay: 0.1,
-      });
-      gsap.from(".testimonialSection__paragraph", {
-        scrollTrigger: {
-          trigger: ".testimonialSection__paragraph",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        y: "-30%",
-        duration: 0.8,
-        ease: "power1.out",
-        delay: 0.1,
-      });
-      gsap.from(".testimonialSection__Subheading", {
-        scrollTrigger: {
-          trigger: ".testimonialSection__Subheading",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        x: "-30%",
-        duration: 0.8,
-        ease: "power1.out",
-        delay: 0.1,
-      });
-
-      gsap.from(".contact__formWrapper", {
-        scrollTrigger: {
-          trigger: ".contact__formWrapper",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        scale: 0.3,
-        duration: 0.8,
-        ease: "power1.out",
-        delay: 0.1,
-      });
-
-      gsap.from(".get-in-touch", {
-        scrollTrigger: {
-          trigger: ".get-in-touch",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        x: "-30%",
-        duration: 0.8,
-        ease: "power1.out",
-        delay: 0.1,
-      });
-
-      gsap.from(".text-wrapper-38", {
-        scrollTrigger: {
-          trigger: ".text-wrapper-38",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        x: "-30%",
-        duration: 0.8,
-        ease: "power1.out",
-        delay: 0.1,
-      });
-
-      gsap.from(".text-10", {
-        scrollTrigger: {
-          trigger: ".text-10",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        x: "-30%",
-        duration: 0.8,
-        ease: "power1.out",
-        delay: 0.1,
-      });
-
-      gsap.from(".contact__phoneIcon", {
-        scrollTrigger: {
-          trigger: ".contact__phoneIcon",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        scale: 0.3,
-        duration: 0.8,
-        ease: "power1.out",
-        delay: 0.1,
-      });
-      gsap.from(".contact__emailIcon", {
-        scrollTrigger: {
-          trigger: ".contact__emailIcon",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        scale: 0.3,
-        duration: 0.8,
-        ease: "power1.out",
-        delay: 0.1,
-      });
-      gsap.from(".contact__locationIcon", {
-        scrollTrigger: {
-          trigger: ".contact__locationIcon",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        scale: 0.3,
-        duration: 0.8,
-        ease: "power1.out",
-        delay: 0.1,
-      });
-      gsap.from(".text-wrapper-40", {
-        scrollTrigger: {
-          trigger: ".text-wrapper-40",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        x: "50%",
-        duration: 0.8,
-        ease: "power1.out",
-        delay: 0.1,
-      });
-      gsap.from(".text-wrapper-41", {
-        scrollTrigger: {
-          trigger: ".text-wrapper-40",
-          toggleActions: "restart none none none",
-          markers: false,
-        },
-        opacity: 0,
-        x: "50%",
-        duration: 0.8,
-        ease: "power1.out",
-        delay: 0.1,
-      });
     </script>
   </body>
 </html>
