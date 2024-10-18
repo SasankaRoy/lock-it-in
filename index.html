@@ -301,7 +301,7 @@
                       onclick="handleShowPopUp('show')"
                       class="flex-row-center-center get_free_quote"
                     >
-                      Apply Today!
+                    Prequalify Today
                     </button>
                   </header>
                   <div id="heroSection__mainWraper" class="columntake_the">
@@ -324,11 +324,11 @@
                           />
                         </div>
                       </div>
-                      <p class="price ui text size-textmd">
-                        ALTERNATIVE FINANCING to combat high interest rates
+                      <p style="text-align: center;" class="price ui text size-textmd">
+                        Are you a good candidate for Lock It In! Financing? Take the 3-question quiz below!
                       </p>
                     </div>
-                    <button class="flex-row-center-center take_the_quiz">
+                    <button onclick="handleShowPopUp('show')" class="flex-row-center-center take_the_quiz">
                       Take the quiz
                     </button>
                   </div>
@@ -454,14 +454,15 @@
                       <p
                         class="description-1 ui text size-texts aboutSection__Paragraph"
                       >
-                        With our novel 3x3 financing plan, potential buyers can
-                        secure a 3-year lease payment equal to a 3% interest
-                        rate in exchange for making an upfront Lock It In!
-                        Payment of 20% or more of the home's value (as
-                        negotiated) to the potential seller. After 3 years, the
-                        remaining balance of the property is paid in exchange
-                        for title to the home
+                      With our novel 3x3 financing plan, potential buyers can secure a 3-year payment equal to a 3%
+                      interest rate. After such period the buyer would be obligated to assume title and complete the
+                      transaction.
                       </p>
+                      <ol class="about__infoLis">
+                        <li>Buyer makes Lock It In! Payment of 25% 1 of the property value,</li>
+                        <li>Buyer makes 3 years of payments to the Seller,</li>
+                        <li>Buyer pays the remaining ~75% of the pre-agreed upon price to the Seller and receives title.</li>
+                      </ol>
                     </div>
                   </div>
                   <div class="columncreatefro aboutSection__LearnMoreBTN">
@@ -656,6 +657,31 @@
                           </li>
                         </ul>
                       </div>
+
+                      <div class="traditionalDiv__mainWrapper">
+                        <h3 class="traditional__mainTitle">
+                          TRADITIONAL FINANCING
+                        </h3>
+                        <ul class="traditional__featuresListWrapper">
+                          <li class="traditional__KeyTitle">25% downpayment</li>
+                          <li class="traditional__KeyTitle">
+                            75% mortgage financing at current mortgage rates
+                            that exceed 6%
+                          </li>
+                          <li class="traditional__KeyTitle">
+                            pay 3 - 6% in refinance cost when rates fall
+                          </li>
+                          <li class="traditional__KeyTitle">
+                            Pay high closing costs
+                            <ul class="traditional__SubfeaturesListWrapper">
+                              <li class="traditional__KeyTitle">Bank origination fees</li>
+                              <li class="traditional__KeyTitle">Bank underwriting fees</li>
+                              <li class="traditional__KeyTitle">other (legal,title,insurance,escrow)</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                      
                     </div>
                   </div>
 
@@ -792,7 +818,7 @@
                     <button
                       class="flex-row-center-center contact_us-1 banner__ContactBTN"
                     >
-                      CONTACT US
+                    Prequalify Today
                     </button>
                   </div>
                 </div>
@@ -814,13 +840,12 @@
               Testimonials
             </button>
             <p class="whatour ui text size-text3xl testimonialSection__heading">
-              What Our Clients Are Saying
+              What you can expect
             </p>
             <p
               class="description ui text size-texts testimonialSection__paragraph"
             >
-              Hear from homeowners and investors who have experienced the
-              benefits of Lock It In! See how our innovative financing solutions
+               See how our innovative financing solutions
               have made their property dreams a reality.
             </p>
           </div>
@@ -979,7 +1004,7 @@
                 <div class="columnview">
                   <div class="view"></div>
                   <div class="columnname">
-                    <div class="phone contact__phoneIcon">
+                    <!-- <div class="phone contact__phoneIcon">
                       <img
                         src="./img/img_solar_phone_bold.svg"
                         alt="Solarphone"
@@ -988,7 +1013,7 @@
                       <h2 class="class-12323821193 ui heading size-headings">
                         +1 232-382-1193
                       </h2>
-                    </div>
+                    </div> -->
                     <div class="phone contact__emailIcon">
                       <img
                         src="./img/img_ic_round_email.svg"
@@ -996,7 +1021,7 @@
                         class="solarphone_one"
                       />
                       <h3 class="email-2 ui heading size-headings">
-                        example@gmail.com
+                        LockItIn@LockItInFinance.com
                       </h3>
                     </div>
                     <div class="phone contact__locationIcon">
@@ -1005,7 +1030,7 @@
                         alt="Typcnlocation"
                         class="solarphone_one"
                       />
-                      <h4 class="email-2 ui heading size-headings">New york</h4>
+                      <h4 class="email-2 ui heading size-headings">New York, NY</h4>
                     </div>
                   </div>
                 </div>
@@ -1248,8 +1273,7 @@
           <div class="questionCard__mainWrapper">
             <div class="questionText__wrapper">
               <p>
-                Are you having trouble selling the property at your asking
-                price?
+                Are you financially qualified to purchase with traditional mortgage financing?
               </p>
             </div>
             <div class="answer__Wrapper">
@@ -1260,7 +1284,8 @@
 
           <div class="questionCard__mainWrapper">
             <div class="questionText__wrapper">
-              <p>Are you able to rent the property before selling?</p>
+              <p>Can you consider an alternative financing arrangement if it provided a 3% interest rate sized
+                payment?</p>
             </div>
             <div class="answer__Wrapper">
               <button class="answer__yesBTNWrapper">Yes</button>
@@ -1271,13 +1296,11 @@
           <div class="questionCard__mainWrapper">
             <div class="questionText__wrapper">
               <h4 class="question__heading">
-                Could you accept 25%¹ of the property's value today in exchange
-                for
+                Can you pay 25% 1 of the property’s value today (like a downpayment) in exchange for:
               </h4>
-              <p>a) Provide a 3-year lease, and</p>
+              <p>a) 3% interest rate (lease) payments and</p>
               <p>
-                b) The option to sell at a pre-agreed price thereafter, and
-                receive the reiremaining 25% of the property's value?
+                b) An obligation to pay the remaining ~75% of the pre-agreed price in 3 years?
               </p>
             </div>
             <div class="answer__Wrapper">
@@ -1378,8 +1401,7 @@
           <div class="questionCard__mainWrapper">
             <div class="questionText__wrapper">
               <p>
-                Are you having trouble selling the property at your asking
-                price?
+                Are you having trouble selling the property at your asking price?
               </p>
             </div>
             <div class="answer__Wrapper">
@@ -1390,7 +1412,7 @@
 
           <div class="questionCard__mainWrapper">
             <div class="questionText__wrapper">
-              <p>Are you able to rent the property before selling?</p>
+              <p>Are you able to lease the property for 3 years?</p>
             </div>
             <div class="answer__Wrapper">
               <button class="answer__yesBTNWrapper">Yes</button>
@@ -1401,13 +1423,11 @@
           <div class="questionCard__mainWrapper">
             <div class="questionText__wrapper">
               <h4 class="question__heading">
-                Could you accept 25%¹ of the property's value today in exchange
-                for
+                Can you accept 25% or more 1 of the property’s value today in exchange for:
               </h4>
-              <p>a) Provide a 3-year lease, and</p>
+              <p>a) Providing a 3-year lease, and</p>
               <p>
-                b) The option to sell at a pre-agreed price thereafter, and
-                receive the reiremaining 25% of the property's value?
+                b) Receive the remaining ~75% of the property’s value and transfer title?
               </p>
             </div>
             <div class="answer__Wrapper">
